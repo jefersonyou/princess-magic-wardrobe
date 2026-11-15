@@ -39,3 +39,16 @@ generated_images/exec-b20534a8-1291-45cb-8a02-d5ad4477c6f3.png
 기본 캐릭터는 아이보리 원피스 착용. 왕관/신발/드레스는 독립 레이어.
 렌더링 검사 후 드레스 어깨 폭 및 신발 높이 보정. 스냅 반경으로 아트 정렬을 보정하지 않음.
 현재는 첫 통합 아트 버전. 최종 품질 승인 및 실제 iPad의 선명도/경계 검증은 남아 있음.
+
+## 조이의 마법 옷장 v0.4.0
+이미지 생성으로 만든 원본(기존 사용자의 승인 캐릭터를 참조):
+- exec-55850e77-23e7-4d3b-97de-2f767ee20363.png: 기본 드레스 목깃 제거/어깨 폭 축소. public/art/princess-atlas.png
+- exec-a48dd020-f8e8-4cfc-942d-bff90329f59d.png: 드레스 3, 신발 3, 머리장식 3, 목걸이 2, 팔찌 1. wardrobe-atlas.png
+- exec-ae194931-1176-4967-a42d-0c19fc6b741d.png: 16 드레스 및 8 신발 세트 중 6 사용. clothes-collection.png
+- exec-b93f56d2-bde1-4315-abbe-629d5c624c85.png: 머리장식8, 목걸이8, 팔찌8 중7 사용. accessories-collection.png
+- exec-41ba877c-11d3-4fc8-bf40-cce9b15dac56.png: 왕실 옷방 배경. royal-dressing-room.png
+아틀라스 프레임은 alpha 채널 경계 판독으로 데이터화. 파일을 잘라 다시 인코딩하지 않음.
+좌표: src/phase0/rig.ts 및 collection-frames.ts.
+원본 이미지 수정은 이미지 생성 도구 사용. 런타임 레이어 가림: 기본 의상 몸통/치마를 교체할 때 가려짐 처리, 플랫슈즈 안쪽과 일부 목선의 스프라이트 마스크.
+금색 왕관 폭 88.92 → 50, 위치 [115,21]로 축소.
+대표 착장 4종을 브라우저 캡처로 검사. 모든 조합의 실제 iPad 정렬 검증은 미완료.
