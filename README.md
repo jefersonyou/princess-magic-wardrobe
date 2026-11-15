@@ -1,19 +1,18 @@
 # 조이의 마법 옷장
-공주 옷방에서 조이를 꾸미고 런웨이와 별빛 무대에 서는 iPad 드레스업 PWA.
+기존 조이 캐릭터와 함께 요정의 영어 안내를 듣고 옷을 입히는 iPad 드레스업 PWA.
 
 [게임 열기](https://jefersonyou.github.io/princess-magic-wardrobe/)
 
-- 의상 30종: 드레스 20 + 신발 10
-- 액세서리 30종: 머리 장식 12 + 목걸이 10 + 팔찌 8
-- 터치 드래그/부위별 스냅, 슬롯 교체, 코디 저장·불러오기
-- 런웨이/별빛 무대 패션쇼, 포토타임 PNG 저장·공유
-- 홈 화면 설치 및 오프라인 실행
+- 상단 「왕궁의 아침」 → 「이야기 시작」: dress / shoes / crown을 드래그해 Stage 1 완료
+- 요정 루미, 영어 음성, 반복 듣기·힌트·자막·개별 볼륨
+- 이야기 보상, 학습 진행 및 현재 코디 자동 저장
+- 자유 꾸미기 60종, 런웨이·무대 2D 워킹, 포토타임 PNG 저장·공유
+- 홈 화면 설치와 오프라인 실행·음성
 
-실행: `npm ci` → `npm run dev`
-빌드: `npm run build`
-테스트: `npm test` (설정의 Chromium 경로 조정 필요)
+실행: `npm ci` → `npm run dev`. 빌드: `npm run build`.
+테스트: `npm test`, `npx playwright test --config playwright.pwa.config.ts` (Chromium 경로 조정 필요).
+사전 제작 MP3를 포함하므로 개발·플레이에 유료 음성 API 불필요.
 
-iPad Safari에서 게임 주소를 열어 공유 → 홈 화면에 추가.
-업데이트 후 하단 v0.4.0을 확인하세요. 자세한 사용법은 [INSTALL.md](INSTALL.md).
-
-현재 패션쇼는 고정 포즈의 이동 및 포즈 연출입니다. 영어 스토리/음성은 후속 개발 범위입니다.
+업데이트 후 v0.6.0을 확인하세요. 설치: [INSTALL.md](INSTALL.md).
+전체 원문: [SPEC.md](SPEC.md). 구현 대조표: [SPEC-STATUS.md](SPEC-STATUS.md).
+이번 단계는 Stage 1까지입니다. Stage 2–6과 실제 iPad/어린이 사용성 검증은 후속 작업입니다.

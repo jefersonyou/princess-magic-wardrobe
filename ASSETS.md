@@ -57,3 +57,9 @@ v0.5.0 이미지 편집 원본:
 - exec-42a89db6-e125-41de-8697-5564da1e846f.png → clothes-collection.png (목 뒤 링 제거, 신발 폭 수정)
 - exec-e2cdfea4-ce2d-4eea-923d-7426b0c9c8bc.png → wardrobe-atlas.png (3종 목선 수정)
 목선 타원 구멍 마스크는 완전히 삭제.
+
+## v0.6.0
+- princess-atlas.png 및 기존 의상 4개 atlas는 변경하지 않음 (기존 조이 유지).
+- fairy.png: 이미지 생성 도구로 제작한 오리지널 동료 요정 루미. 원본 exec-d6af11d3-7191-44f6-81b8-4f2c82416087.png.
+- public/audio/*.mp3: 확정된 영어 대사 7개, 무료 edge-tts 7.3.1 / en-US-AriaNeural. 학습 단어 -5% 속도, 일반 대사 +5%, pitch +5Hz. 런타임 API 호출 없음.
+- TTS는 ChatGPT 음성 내보내기로 생성한 것이 아님. 무료 임시 음성으로 제공하며 실제 iPad 발음/억양 청취 검증 필요.
