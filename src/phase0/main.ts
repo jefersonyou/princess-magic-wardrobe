@@ -1,0 +1,27 @@
+import Phaser from 'phaser';
+import {anchors,garments,body,atlasUrl,thumbnail,type GarmentId} from './rig';
+import {canSnap,canvasPoint} from './geometry';
+const status=document.querySelector<HTMLElement>('#status')!;
+const host=document.querySelector<HTMLElement>('#character')!;
+const names={dress:'드레스',shoes:'신발',crown:'왕관'};
+const ids=Object.keys(garments) as GarmentId[];
+const density=Math.min(devicePixelRatio,3);
+let scene:WardrobeScene, guides=false;
+let drag:{id:GarmentId;pointer:number;ghost:HTMLElement;button:HTMLButtonElement;near:boolean}|null=null;
+class WardrobeScene extends Phaser.Scene {
+  worn=new Set<GarmentId>(); layers=new Map<GarmentId,Phaser.GameObjects.Image>();
+  marks!:Phaser.GameObjects.Container; target!:Phaser.GameObjects.Graphics; preview!:Phaser.GameObjects.Image;
+  preload(){this.load.image('atlas',atlasUrl)}
+  create(){this.cameras.main.setZoom(density).setScroll((280-280*density)/2,(440-440*density)/2);scene=this;const atlas=this.textures.get('atlas');for(const [id,sprite]of [['body',body],...ids.map(id=>[id,garments[id]] as const)] as const){atlas.add(id,0,...sprite.frame)}this.add.image(...body.position,'atlas','body').setOrigin(0).setDisplaySize(...body.size);for(const id of ids){const g=garments[id];this.layers.set(id,this.add.image(...g.position,'atlas',id).setOrigin(0).setDisplaySize(...g.size).setAngle(g.rotation).setDepth(g.layer).setVisible(false))}this.preview=this.add.image(0,0,'atlas','dress').setOrigin(0).setDepth(80).setAlpha(.5).setVisible(false);this.target=this.add.graphics().setDepth(90);this.marks=this.add.container().setDepth(100);for(const [label,[x,y]]of Object.entries(anchors)){this.marks.add(this.add.circle(x,y,2,0xe85282));this.marks.add(this.add.text(x+4,y-3,label,{fontSize:'6px',color:'#584268',backgroundColor:'#fffaf5'}))}this.marks.setVisible(guides);host.dataset.ready='true';document.querySelectorAll<HTMLButtonElement>('.item').forEach(b=>b.disabled=false);}
+  highlight(id:GarmentId,near:boolean){const g=garments[id],[x,y]=anchors[g.anchor];this.target.clear().lineStyle(1.5,near?0x86aa89:0xb894cb,.8).strokeCircle(x,y,g.radius);this.preview.setTexture('atlas',id).setPosition(...g.position).setDisplaySize(...g.size).setVisible(near);}
+  clearPreview(){this.target.clear();this.preview.setVisible(false)}
+  wear(id:GarmentId){this.worn.add(id);const image=this.layers.get(id)!;this.tweens.killTweensOf(image);image.setVisible(true).setAlpha(.4);this.tweens.add({targets:image,alpha:1,duration:220});host.dataset.worn=[...this.worn].sort().join(',');const [x,y]=anchors[garments[id].anchor];for(let i=0;i<8;i++){const angle=i*Math.PI/4,star=this.add.star(x,y,4,1,4,0xe7c879).setDepth(110);this.tweens.add({targets:star,x:x+Math.cos(angle)*35,y:y+Math.sin(angle)*35,alpha:0,duration:450,onComplete:()=>star.destroy()})}}
+}
+const game=new Phaser.Game({type:Phaser.CANVAS,parent:host,width:280*density,height:440*density,transparent:true,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:WardrobeScene,audio:{noAudio:true},render:{antialias:true}});
+function near(e:PointerEvent,id:GarmentId){const p=canvasPoint(game.canvas.getBoundingClientRect(),e.clientX,e.clientY);return canSnap(id,p.x,p.y)}
+function move(e:PointerEvent){if(!drag||drag.pointer!==e.pointerId)return;const d=drag;d.near=near(e,d.id);const r=game.canvas.getBoundingClientRect();if(d.near){const [x,y]=anchors[garments[d.id].anchor];d.ghost.style.left=r.left+x*r.width/280+'px';d.ghost.style.top=r.top+y*r.height/440+'px';d.ghost.style.opacity='0';}else{d.ghost.style.left=e.clientX+'px';d.ghost.style.top=e.clientY-24+'px';d.ghost.style.opacity='1'}scene.highlight(d.id,d.near);status.textContent=d.near?'반짝이는 자리에 놓아주세요!':'옷을 알맞은 신체 부위로 옮겨주세요.'}
+function cancel(){if(!drag)return;drag.ghost.remove();drag=null;scene.clearPreview();status.textContent='옷장으로 돌아왔어요. 다시 시도해요.'}
+for(const id of ids){const g=garments[id],b=document.createElement('button');b.className='item';b.dataset.item=id;b.disabled=true;b.innerHTML=`${thumbnail(id)}<span>${names[id]}<br><small>${id}</small></span>`;document.querySelector('#items')!.append(b);b.onpointerdown=e=>{if(drag||!e.isPrimary||e.button!==0)return;e.preventDefault();b.setPointerCapture(e.pointerId);const ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=b.querySelector('svg')!.outerHTML;document.body.append(ghost);drag={id,pointer:e.pointerId,ghost,button:b,near:false};move(e)};b.onpointermove=move;b.onpointerup=e=>{if(!drag||drag.pointer!==e.pointerId)return;const d=drag;drag=null;scene.clearPreview();if(near(e,id)){scene.wear(id);d.ghost.remove();status.textContent=`${names[id]} 착용 완료 · ${scene.worn.size}/3`;}else{const r=b.getBoundingClientRect();const animation=d.ghost.animate([{left:d.ghost.style.left,top:d.ghost.style.top,opacity:1},{left:r.left+r.width/2+'px',top:r.top+r.height/2+'px',opacity:0}],{duration:220});animation.onfinish=()=>d.ghost.remove();status.textContent='옷장으로 돌아왔어요. 다시 시도해요.'}b.releasePointerCapture(e.pointerId)};b.onpointercancel=cancel;b.onlostpointercapture=cancel;}
+document.querySelector<HTMLButtonElement>('#guides')!.onclick=()=>{guides=!guides;scene?.marks.setVisible(guides)};
+document.querySelector<HTMLButtonElement>('#reset')!.onclick=()=>{cancel();if(!scene)return;scene.worn.clear();scene.layers.forEach(l=>l.setVisible(false));host.dataset.worn='';status.textContent='다시 세 의상을 착용해보세요.'};
+window.addEventListener('blur',cancel);const resize=new ResizeObserver(()=>{cancel();game.scale.refresh()});resize.observe(host);
