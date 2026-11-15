@@ -49,6 +49,11 @@ generated_images/exec-b20534a8-1291-45cb-8a02-d5ad4477c6f3.png
 - exec-41ba877c-11d3-4fc8-bf40-cce9b15dac56.png: 왕실 옷방 배경. royal-dressing-room.png
 아틀라스 프레임은 alpha 채널 경계 판독으로 데이터화. 파일을 잘라 다시 인코딩하지 않음.
 좌표: src/phase0/rig.ts 및 collection-frames.ts.
-원본 이미지 수정은 이미지 생성 도구 사용. 런타임 레이어 가림: 기본 의상 몸통/치마를 교체할 때 가려짐 처리, 플랫슈즈 안쪽과 일부 목선의 스프라이트 마스크.
+원본 이미지 수정은 이미지 생성 도구 사용. 런타임 레이어 가림: 기본 의상 몸통/치마를 교체할 때 가려짐 처리, 플랫슈즈 안쪽 스프라이트 마스크.
 금색 왕관 폭 88.92 → 50, 위치 [115,21]로 축소.
 대표 착장 4종을 브라우저 캡처로 검사. 모든 조합의 실제 iPad 정렬 검증은 미완료.
+
+v0.5.0 이미지 편집 원본:
+- exec-42a89db6-e125-41de-8697-5564da1e846f.png → clothes-collection.png (목 뒤 링 제거, 신발 폭 수정)
+- exec-e2cdfea4-ce2d-4eea-923d-7426b0c9c8bc.png → wardrobe-atlas.png (3종 목선 수정)
+목선 타원 구멍 마스크는 완전히 삭제.

@@ -49,3 +49,9 @@ npx playwright test --config playwright.pwa.config.ts: 1 passed (9.6s).
 대표 시각 확인: outfit-dress.png, outfit-rose.png, outfit-collectionDress0.png, outfit-collectionDress13.png, joy-photo.png, joy-runway.png.
 테스트 도중 소스 수정으로 HMR이 발생한 회차는 제외하고, 소스를 고정한 최종 회차 전부 통과.
 실제 iPad Photos 앱 저장/터치 체감 성능은 미검증.
+
+v0.4.0 실제 배포 검증: node scripts/check-live.mjs PASS.
+공개 HTTPS 주소에서 새 이름, 60종, 3종 동시 착용, 런웨이, 1600px PNG, 오프라인 reload 확인. 브라우저 오류 0.
+
+## v0.5.0
+빌드 통과. 전체 브라우저 검사 6 passed. 프로덕션 PWA 검사 1 passed. 목선/목걸이/신발 대표 3종과 워킹 프레임 직접 시각 확인. 워킹은 다리와 무릎을 움직이는 2D 구현이며 팔 포즈 유지. 실제 iPad 하드웨어 검증은 미완료.

@@ -36,6 +36,7 @@ for(let i=0;i<8;i++){const tiara=[3,4,5].includes(i);garments['collectionHead'+i
 const jewelNames=['나비','마린','하트','라벤더','에메랄드','눈꽃','장미','달빛'];
 for(let i=0;i<8;i++)garments['collectionNeck'+i]=item(jewelNames[i]+' 목걸이',jewelNames[i]+' necklace','neck','accessories',frames.accessories[8+i] as unknown as Rect,[126,109],[28,20]);
 for(let i=0;i<7;i++)garments['collectionWrist'+i]=item(jewelNames[i]+' 팔찌',jewelNames[i]+' bracelet','wrist','accessories',frames.accessories[16+i] as unknown as Rect,[211,227],[15,6],-32);
+for(const g of Object.values(garments)){if(g.slot==='shoes'){g.position=[0,0];g.size=[280,440]}if(g.slot==='neck'){g.position=[128,113];g.size=[24,g.english.includes('Pearl')?14:17]}}
 export type GarmentId=keyof typeof garments;
 export const ids=Object.keys(garments) as GarmentId[];
 export function thumbnail(id:GarmentId){const g=garments[id],a=atlases[g.atlas],[x,y,w,h]=g.frame;return `<svg viewBox="0 0 ${w} ${h}"><defs><clipPath id="crop-${id}"><rect width="${w}" height="${h}"/></clipPath></defs><image clip-path="url(#crop-${id})" href="${a.url}" x="${-x}" y="${-y}" width="${a.width}" height="${a.height}"/></svg>`}
