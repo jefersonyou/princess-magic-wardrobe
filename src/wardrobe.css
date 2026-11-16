@@ -46,3 +46,7 @@
  #character{width:100%;min-height:0}
  .items{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
+
+/* Allow two-finger touch scrolling without triggering a garment drag. */
+.items{touch-action:pan-y;overscroll-behavior:contain}
+.items .item{touch-action:none}
