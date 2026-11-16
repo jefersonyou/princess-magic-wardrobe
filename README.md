@@ -14,5 +14,7 @@
 검사: `npm test`, `npx playwright test --config playwright.pwa.config.ts` (Chromium 경로 조정 필요).
 MP3 파일이 포함되어 플레이에 TTS API가 필요하지 않습니다.
 
-v0.7.0. [설치 안내](INSTALL.md) · [명세 대조표](SPEC-STATUS.md) · [테스트](TEST.md)
+v0.8.0. [설치 안내](INSTALL.md) · [명세 대조표](SPEC-STATUS.md) · [테스트](TEST.md)
 실제 iPad Safari/Chrome·어린이 사용성·60FPS 검증은 별도로 남아 있습니다.
+
+착용 렌더링: 의상24종 팔/손 포함 착용 이미지, 신발12종 발 포함 이미지, 목걸이/팔찌 착용 곡선, 우산 쥔 손/접힌 소매. 조이 얼굴 원본 유지.

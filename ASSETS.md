@@ -71,3 +71,12 @@ v0.5.0 이미지 편집 원본:
 - hair-extensions.png: 기존 얼굴/머리를 덮지 않는 뒤 레이어 2개. exec-a811e4a0-fada-4785-ab03-68681d01cdc2.png.
 - 새 atlas 좌표/스냅/레이어는 rig.ts. 신발/장갑은 좌우 각각 정렬. 탐험복은 셔츠와 바지를 분리 합성하여 허리와 발 위치를 맞춤. 장갑/바지 착용 시 원래 손/다리의 중복 노출을 렌더 마스크로 가림.
 - 영어 음성32개: src/data/adventure.json 대사, scripts/generate-voice.py 재현. 무료 Edge TTS AriaNeural, 런타임 호출 없음.
+
+## v0.8.0 착용 렌더링
+- 기존 조이 얼굴/머리/원본 atlas 유지.
+- worn/outfits-1..3.png: 기준 캐릭터 참조, 24종 의상에 피부 목·팔·손을 포함한 착용 이미지 생성. 기존 얼굴/다리와 연결하며 기존 몸통/팔 중복 제거.
+- worn/footwear.png: 12종 신발을 발·발목이 안으로 들어간 착용 모습으로 제작. 기존 발 영역 교체.
+- worn/holding.png 및 holding-arm.png: 우비/겨울 외투의 접힌 소매와 우산을 쥔 손, 다른 의상용 굽힌 팔.
+- worn/jewelry.png: 목·손목 위 착용 기준으로 생성한 10목걸이/8팔찌/목도리의 곡선 장신구 추출. 머리장식/헤어/선글라스는 기존 기준 위치 레이어 유지.
+- 착용 원본 생성ID: 4a00e96e-d36f-4f1b-a602-c0faf75a305a, f4c6243e-69d9-480f-90ff-46c9616d75ef, 29c55034-8a6d-448d-acc9-c73d0268f1ea, 0ec43b4b-0c31-4eba-a096-3d7409c9cd55, 81b011f5-7624-4e87-89ea-b5aa3dc98f75, fd74f272-9287-4265-9ca1-cf336635ea02, 4121cce1-9331-413a-87d5-24ae7943fd7b. generated_images에 원본 보관.
+- src/worn-renderer.ts에서 착용 좌표/몸 가림/교체 관리. 기존 썸네일과 실제 착용 스프라이트 분리.
