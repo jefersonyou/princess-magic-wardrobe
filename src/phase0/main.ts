@@ -11,6 +11,27 @@ const status=document.querySelector<HTMLElement>('#status')!;
 const host=document.querySelector<HTMLElement>('#character')!;
 
 const density=Math.min(devicePixelRatio,3);
+const itemList=document.querySelector<HTMLElement>('#items')!;
+let twoFingerScroll=false;
+let scrollTouchY=0;
+itemList.addEventListener('touchstart',e=>{
+ if(e.touches.length>=2){
+  twoFingerScroll=true;
+  scrollTouchY=(e.touches[0].clientY+e.touches[1].clientY)/2;
+  cancel();
+ }
+},{passive:true,capture:true});
+itemList.addEventListener('touchmove',e=>{
+ if(e.touches.length>=2){
+  twoFingerScroll=true;
+  const y=(e.touches[0].clientY+e.touches[1].clientY)/2;
+  itemList.scrollTop+=scrollTouchY-y;
+  scrollTouchY=y;
+  e.preventDefault();
+ }
+},{passive:false,capture:true});
+itemList.addEventListener('touchend',e=>{if(e.touches.length===0)twoFingerScroll=false},{passive:true});
+itemList.addEventListener('touchcancel',()=>{twoFingerScroll=false},{passive:true});
 let scene:WardrobeScene, guides=false;
 let drag:{id:GarmentId;pointer:number;ghost:HTMLElement;button:HTMLButtonElement;near:boolean}|null=null;
 class WardrobeScene extends Phaser.Scene {
@@ -32,10 +53,17 @@ class WardrobeScene extends Phaser.Scene {
   wear(id:GarmentId){for(const old of [...this.worn])if(garments[old].slot===garments[id].slot||(garments[old].slot==='outer'&&garments[id].slot==='dress')){this.worn.delete(old);this.layers.get(old)!.setVisible(false)}this.worn.add(id);const image=this.layers.get(id)!;this.tweens.killTweensOf(image);image.setVisible(true).setAlpha(.4);this.tweens.add({targets:image,alpha:1,duration:220});host.dataset.worn=[...this.worn].sort().join(',');updateWorn();const [x,y]=anchors[garments[id].anchor];for(let i=0;i<8;i++){const angle=i*Math.PI/4,star=this.add.star(x,y,4,1,4,0xe7c879).setDepth(110);this.tweens.add({targets:star,x:x+Math.cos(angle)*35,y:y+Math.sin(angle)*35,alpha:0,duration:450,onComplete:()=>star.destroy()})}}
 }
 const game=new Phaser.Game({type:Phaser.CANVAS,parent:host,width:280*density,height:440*density,transparent:true,scale:{mode:Phaser.Scale.NONE,autoCenter:Phaser.Scale.NO_CENTER},scene:WardrobeScene,audio:{noAudio:true},render:{antialias:true}});
-function near(e:PointerEvent,id:GarmentId){const p=canvasPoint(game.canvas.getBoundingClientRect(),e.clientX,e.clientY);return canSnap(id,p.x,bodyY(p.y))}
+function near(e:PointerEvent,id:GarmentId){
+ const rect=game.canvas.getBoundingClientRect();
+ const p=canvasPoint(rect,e.clientX,e.clientY);
+ if(canSnap(id,p.x,bodyY(p.y)))return true;
+ // Larger forgiving drop zone around the character, but not the wardrobe.
+ const x=p.x,y=bodyY(p.y);
+ return x>=34&&x<=246&&y>=52&&y<=430;
+}
 function move(e:PointerEvent){if(!drag||drag.pointer!==e.pointerId)return;const d=drag;d.near=near(e,d.id);const r=game.canvas.getBoundingClientRect();if(d.near){const [x,y]=anchors[garments[d.id].anchor];d.ghost.style.left=r.left+x*r.width/280+'px';d.ghost.style.top=r.top+visualY(y)*r.height/440+'px';d.ghost.style.opacity='0';}else{d.ghost.style.left=e.clientX+'px';d.ghost.style.top=e.clientY-24+'px';d.ghost.style.opacity='1'}scene.highlight(d.id,d.near);status.textContent=d.near?'반짝이는 자리에 놓아주세요!':'옷을 알맞은 신체 부위로 옮겨주세요.'}
 function cancel(){if(!drag)return;drag.ghost.remove();drag=null;scene.clearPreview();status.textContent='옷장으로 돌아왔어요. 다시 시도해요.'}
-for(const id of ids){const g=garments[id],b=document.createElement('button');b.className='item';b.dataset.item=id;b.dataset.category=g.slot;b.disabled=true;b.innerHTML=`${thumbnail(id)}<span>${g.name}<br><small>${g.english}</small></span>`;document.querySelector('#items')!.append(b);b.onpointerdown=e=>{if(drag||!e.isPrimary||e.button!==0||!canUse(id))return;e.preventDefault();b.setPointerCapture(e.pointerId);const ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=b.querySelector('svg')!.outerHTML;document.body.append(ghost);drag={id,pointer:e.pointerId,ghost,button:b,near:false};move(e)};b.onpointermove=move;b.onpointerup=e=>{if(!drag||drag.pointer!==e.pointerId)return;const d=drag;drag=null;scene.clearPreview();if(near(e,id)){scene.wear(id);magicSound();storyAttempt(id);d.ghost.remove();status.textContent=`${garments[id].name} 착용 완료`;}else{storyMiss();const r=b.getBoundingClientRect();const animation=d.ghost.animate([{left:d.ghost.style.left,top:d.ghost.style.top,opacity:1},{left:r.left+r.width/2+'px',top:r.top+r.height/2+'px',opacity:0}],{duration:220});animation.onfinish=()=>d.ghost.remove();status.textContent='옷장으로 돌아왔어요. 다시 시도해요.'}b.releasePointerCapture(e.pointerId)};b.onpointercancel=cancel;b.onlostpointercapture=cancel;}
+for(const id of ids){const g=garments[id],b=document.createElement('button');b.className='item';b.dataset.item=id;b.dataset.category=g.slot;b.disabled=true;b.innerHTML=`${thumbnail(id)}<span>${g.name}<br><small>${g.english}</small></span>`;document.querySelector('#items')!.append(b);b.onpointerdown=e=>{if(twoFingerScroll||drag||!e.isPrimary||e.button!==0||!canUse(id))return;e.preventDefault();b.setPointerCapture(e.pointerId);const ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=b.querySelector('svg')!.outerHTML;document.body.append(ghost);drag={id,pointer:e.pointerId,ghost,button:b,near:false};move(e)};b.onpointermove=move;b.onpointerup=e=>{if(!drag||drag.pointer!==e.pointerId)return;const d=drag;drag=null;scene.clearPreview();if(twoFingerScroll){cancel();return}if(canUse(id)&&near(e,id)){scene.wear(id);magicSound();storyAttempt(id);d.ghost.remove();status.textContent=`${garments[id].name} 착용 완료`;}else{storyMiss();const r=b.getBoundingClientRect();const animation=d.ghost.animate([{left:d.ghost.style.left,top:d.ghost.style.top,opacity:1},{left:r.left+r.width/2+'px',top:r.top+r.height/2+'px',opacity:0}],{duration:220});animation.onfinish=()=>d.ghost.remove();status.textContent='옷장으로 돌아왔어요. 다시 시도해요.'}b.releasePointerCapture(e.pointerId)};b.onpointercancel=cancel;b.onlostpointercapture=cancel;}
 document.querySelector<HTMLButtonElement>('#guides')!.onclick=()=>{guides=!guides;scene?.marks.setVisible(guides)};
 document.querySelector<HTMLButtonElement>('#reset')!.onclick=()=>{cancel();if(!scene)return;scene.worn.clear();scene.layers.forEach(l=>l.setVisible(false));host.dataset.worn='';updateWorn();status.textContent='새로운 스타일을 만들어보세요.'};
 window.addEventListener('blur',cancel);const refit=fitCharacterCanvas(game,host);const resize=new ResizeObserver(()=>{cancel();refit()});resize.observe(host);
