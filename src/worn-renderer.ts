@@ -19,7 +19,31 @@ export function prepareWorn(scene:Phaser.Scene){
  pc.save();pc.globalCompositeOperation='destination-out';pc.beginPath();for(const [j,[px,py]]of [[178,162],[280,162],[280,280],[220,280],[218,257],[207,235],[189,200],[178,176]].entries())j?pc.lineTo(px,py):pc.moveTo(px,py);pc.closePath();pc.fill();pc.restore();scene.textures.addCanvas('held-outfit-'+id,posed);
  }
  const source=scene.textures.get('wornFeet').getSourceImage() as HTMLImageElement;
- for(const [i,id]of shoeIds.entries()){const c=canvas(),ctx=context(c),col=i%4,row=Math.floor(i/4),y=Math.round(row*1024/3),h=Math.round((row+1)*1024/3)-y;for(let side=0;side<2;side++){const b=bounds(source,col*384+side*192,y,192,h);const boot=['boots','collectionShoes4'].includes(id),cut=boot?.28:.55,top=boot?374:385;ctx.drawImage(source,b[0],b[1]+b[3]*cut,b[2],b[3]*(1-cut),(side===0?114.5:164)-15,top,30,419-top)}scene.textures.addCanvas('worn-'+id,c)}
+ for(const [i,id]of shoeIds.entries()){const c=canvas(),ctx=context(c),col=i%4,row=Math.floor(i/4),y=Math.round(row*1024/3),h=Math.round((row+1)*1024/3)-y;for(let side=0;side<2;side++){const b=bounds(source,col*384+side*192,y,192,h);const boot=['boots','collectionShoes4'].includes(id);
+ const top=boot?378:395;
+ const targetHeight=boot?42:25;
+ const targetWidth=boot?28:26;
+ // Preserve each footwear sprite rather than discarding its upper half.
+ // Align both individual shoes to the corresponding feet.
+ ctx.drawImage(source,...b,(side===0?114.5:164)-targetWidth/2,top,targetWidth,targetHeight)}scene.textures.addCanvas('worn-'+id,c)}
+ // Headwear from the atlas is fitted to the actual head rather than stretched
+ // over the character's full body. This applies to free play and story mode.
+ const headIds=['crown','tiara','flowers','bow',...Array.from({length:8},(_,i)=>'collectionHead'+i),'explorerHat','finalCrown'];
+ for(const id of headIds){
+  const g=garments[id],c=canvas(),ctx=context(c);
+  const src=scene.textures.get(g.atlas).getSourceImage() as HTMLImageElement;
+  const [sx,sy,sw,sh]=g.frame;
+  const fit=id==='explorerHat'?{x:102,y:20,w:77,h:43}:
+   id==='finalCrown'?{x:116,y:21,w:49,h:27}:
+   id==='crown'?{x:115,y:20,w:51,h:33}:
+   id==='tiara'?{x:114,y:22,w:53,h:36}:
+   id==='flowers'?{x:104,y:29,w:73,h:52}:
+   id==='bow'?{x:155,y:47,w:37,h:29}:
+   id.startsWith('collectionHead')&&[3,4,5].includes(Number(id.slice(-1)))?
+   {x:114,y:22,w:53,h:35}:{x:155,y:47,w:37,h:27};
+  ctx.drawImage(src,sx,sy,sw,sh,fit.x,fit.y,fit.w,fit.h);
+  scene.textures.addCanvas('worn-'+id,c);
+ }
  const jewelry=scene.textures.get('wornJewels').getSourceImage() as HTMLImageElement;const jewelIds=['pendant','pearls',...Array.from({length:8},(_,i)=>'collectionNeck'+i),'bracelet',...Array.from({length:7},(_,i)=>'collectionWrist'+i),'scarf'];
  for(const [i,id]of jewelIds.entries()){const c=canvas(),ctx=context(c),x=Math.round(i%5*1254/5),y=Math.round(Math.floor(i/5)*1254/4);const b=bounds(jewelry,x,y,250,313);if(i<10)ctx.drawImage(jewelry,...b,126,110,28,23);else if(i<18)ctx.drawImage(jewelry,...b,209,225,17,9);else ctx.drawImage(jewelry,...b,122,108,36,51);scene.textures.addCanvas('worn-'+id,c)}
  const original=scene.textures.get(body.atlas).getSourceImage() as HTMLImageElement;
@@ -28,7 +52,7 @@ export function prepareWorn(scene:Phaser.Scene){
  for(const [i,id]of ['raincoat','winterCoat'].entries()){const c=canvas(),ctx=context(c);ctx.drawImage(holding,i*512,290,512,640,64,99,184,216);ctx.drawImage(holding,i*512,0,512,290,116,3,100,44);ctx.drawImage(holding,i*512+326,210,12,180,181,32,4.3,103);scene.textures.addCanvas('holding-'+id,c)}
  const arm=scene.textures.get('wornArm').getSourceImage() as HTMLImageElement;const c=canvas(),ctx=context(c);ctx.drawImage(arm,0,750,540,570,166,145,70,74);ctx.drawImage(arm,0,110,887,500,165,3,108,61);ctx.drawImage(arm,435,550,28,360,220,54,3.6,124);scene.textures.addCanvas('holding-bare',c);
 }
-export const hasWorn=(id:string)=>outfitIds.includes(id)||shoeIds.includes(id);
+export const hasWorn=(id:string)=>outfitIds.includes(id)||shoeIds.includes(id)||['crown','tiara','flowers','bow','explorerHat','finalCrown'].includes(id)||id.startsWith('collectionHead');
 export function applyWorn(scene:Phaser.Scene,worn:Set<string>,layers:Map<string,Phaser.GameObjects.Image>,bodyImage:Phaser.GameObjects.Image){
  const outfit=[...worn].find(id=>garments[id].slot==='outer')||[...worn].find(id=>garments[id].slot==='dress');const shoes=[...worn].some(id=>garments[id].slot==='shoes');
  if(outfit||shoes)bodyImage.setTexture('worn-body-'+(outfit?'outfit'+(shoes?'-shoes':''):'base-shoes')).setPosition(0,0).setDisplaySize(280,440);else bodyImage.setPosition(...body.position).setDisplaySize(...body.size);
