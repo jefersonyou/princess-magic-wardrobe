@@ -65,6 +65,25 @@ export function prepareWorn(scene:Phaser.Scene){
   paint(99);paint(181);
   scene.textures.addCanvas('worn-earring'+i,c);
  }
+ // Ten distinct paired sunglasses, drawn at face scale on transparent overlays.
+ const sunglassColors=['#caa467','#f58cb3','#b89bed','#e6bd60','#ffce70','#69cdb9','#9c8ce8','#f7e8e0','#d64d61','#aeb9d4'];
+ for(let i=0;i<10;i++){
+  const c=canvas(),ctx=context(c);ctx.save();ctx.lineWidth=2.8;ctx.lineJoin='round';ctx.strokeStyle=sunglassColors[i];
+  const shape=i%5;
+  const lens=(x:number)=>{
+   ctx.beginPath();
+   if(shape===0){ctx.moveTo(x-13,67);ctx.quadraticCurveTo(x-9,55,x+1,62);ctx.quadraticCurveTo(x+12,56,x+13,67);ctx.quadraticCurveTo(x+8,80,x,79);ctx.quadraticCurveTo(x-12,78,x-13,67)}
+   else if(shape===1){ctx.moveTo(x,66);ctx.bezierCurveTo(x-14,53,x-17,71,x,83);ctx.bezierCurveTo(x+17,71,x+14,53,x,66)}
+   else if(shape===2){ctx.ellipse(x,71,13,10,0,0,Math.PI*2)}
+   else if(shape===3){ctx.roundRect(x-13,61,26,20,4)}
+   else {for(let j=0;j<10;j++){const a=-Math.PI/2+j*Math.PI/5,r=j%2?9:14;j?ctx.lineTo(x+Math.cos(a)*r,71+Math.sin(a)*r):ctx.moveTo(x+Math.cos(a)*r,71+Math.sin(a)*r)}ctx.closePath()}
+   ctx.fillStyle=i===7?'rgba(111,89,122,.32)':i===6?'rgba(128,102,200,.48)':'rgba(76,64,99,.62)';ctx.fill();ctx.stroke();
+  };
+  lens(126);lens(154);
+  ctx.beginPath();ctx.moveTo(139,67);ctx.quadraticCurveTo(140,64,141,67);ctx.moveTo(113,66);ctx.lineTo(106,63);ctx.moveTo(167,66);ctx.lineTo(174,63);ctx.stroke();
+  if([4,7].includes(i)){ctx.fillStyle='#fff6d2';for(const x of [112,168]){ctx.beginPath();ctx.arc(x,64,2.2,0,Math.PI*2);ctx.fill()}}
+  ctx.restore();scene.textures.addCanvas('worn-sunglass'+i,c);
+ }
  const jewelry=scene.textures.get('wornJewels').getSourceImage() as HTMLImageElement;const jewelIds=['pendant','pearls',...Array.from({length:8},(_,i)=>'collectionNeck'+i),'bracelet',...Array.from({length:7},(_,i)=>'collectionWrist'+i),'scarf'];
  for(const [i,id]of jewelIds.entries()){const c=canvas(),ctx=context(c),x=Math.round(i%5*1254/5),y=Math.round(Math.floor(i/5)*1254/4);const b=bounds(jewelry,x,y,250,313);if(i<10)ctx.drawImage(jewelry,...b,126,110,28,23);else if(i<18)ctx.drawImage(jewelry,...b,209,225,17,9);else ctx.drawImage(jewelry,...b,122,108,36,51);scene.textures.addCanvas('worn-'+id,c)}
  const original=scene.textures.get(body.atlas).getSourceImage() as HTMLImageElement;
@@ -73,7 +92,7 @@ export function prepareWorn(scene:Phaser.Scene){
  for(const [i,id]of ['raincoat','winterCoat'].entries()){const c=canvas(),ctx=context(c);ctx.drawImage(holding,i*512,290,512,640,64,99,184,216);ctx.drawImage(holding,i*512,0,512,290,116,3,100,44);ctx.drawImage(holding,i*512+326,210,12,180,181,32,4.3,103);scene.textures.addCanvas('holding-'+id,c)}
  const arm=scene.textures.get('wornArm').getSourceImage() as HTMLImageElement;const c=canvas(),ctx=context(c);ctx.drawImage(arm,0,750,540,570,166,145,70,74);ctx.drawImage(arm,0,110,887,500,165,3,108,61);ctx.drawImage(arm,435,550,28,360,220,54,3.6,124);scene.textures.addCanvas('holding-bare',c);
 }
-export const hasWorn=(id:string)=>outfitIds.includes(id)||shoeIds.includes(id)||['crown','tiara','flowers','bow','explorerHat','finalCrown'].includes(id)||id.startsWith('collectionHead')||id.startsWith('earring');
+export const hasWorn=(id:string)=>outfitIds.includes(id)||shoeIds.includes(id)||['crown','tiara','flowers','bow','explorerHat','finalCrown'].includes(id)||id.startsWith('collectionHead')||id.startsWith('earring')||/^sunglass\\d+$/.test(id);
 export function applyWorn(scene:Phaser.Scene,worn:Set<string>,layers:Map<string,Phaser.GameObjects.Image>,bodyImage:Phaser.GameObjects.Image){
  const outfit=[...worn].find(id=>garments[id].slot==='outer')||[...worn].find(id=>garments[id].slot==='dress');const shoes=[...worn].some(id=>garments[id].slot==='shoes');
  if(outfit||shoes)bodyImage.setTexture('worn-body-'+(outfit?'outfit'+(shoes?'-shoes':''):'base-shoes')).setPosition(0,0).setDisplaySize(280,440);else bodyImage.setPosition(...body.position).setDisplaySize(...body.size);
