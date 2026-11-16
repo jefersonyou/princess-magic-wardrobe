@@ -57,3 +57,31 @@
 @media(orientation:landscape){html,body{height:100%;overflow:hidden}body{height:100dvh;display:flex;flex-direction:column}.game-header{flex-shrink:0;padding-top:max(9px,env(safe-area-inset-top))}main{height:auto;flex:1;min-height:0}.stage{min-width:0;min-height:0}#worn-items,.scene-actions,#show-message{flex-shrink:0}.wardrobe-heading,.wardrobe-bottom{flex-shrink:0}.show-mode #character{margin:48px auto 0;max-width:70%}}
 
 .designer-credit{display:block;color:#956335;font-weight:700;font-size:11px!important;line-height:1.35;margin-top:3px}
+
+/* Portrait: keep the wardrobe in reach without a page/drag scroll conflict. */
+@media(orientation:portrait){
+ html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+ body{height:100dvh;display:flex;flex-direction:column}
+ .game-header{flex:none;padding:calc(5px + env(safe-area-inset-top)) 8px 5px;gap:5px}
+ .brand{padding:3px 12px}.brand>span{font-size:23px}.brand small{font-size:7px}h1{font-size:17px;margin:1px 0}
+ .locations{justify-content:center;flex-wrap:wrap;gap:4px}.locations button{min-height:34px;padding:5px 8px;font-size:10px}
+ main{height:auto;min-height:0;flex:1;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(140px,.9fr) minmax(220px,1fr);overflow:hidden;padding:0 max(6px,env(safe-area-inset-right)) max(5px,env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left));gap:5px}
+ .stage,.wardrobe{height:auto;min-height:0;min-width:0}
+ .stage-badge{font-size:10px;padding:4px 9px;top:3px;left:5px}.stage-badge span{font-size:9px}
+ #character{touch-action:pan-y}.scene-actions{margin-top:2px;gap:4px;flex-wrap:wrap;flex:none}.scene-actions button{min-height:30px;padding:3px 7px;font-size:10px}
+ #worn-items{max-height:26px;overflow-y:auto;flex:none}#worn-items button{min-height:24px}
+ #show-message{margin:2px 0;font-size:9px;min-height:14px;padding:2px 8px;flex:none}
+ .wardrobe-heading{height:34px;min-height:34px;flex:none;padding:0 10px}.wardrobe-heading h2{font-size:16px}.wardrobe-heading span{font-size:9px}
+ .wardrobe-content{padding:5px;gap:5px;min-height:0!important}.tabs{width:45px;touch-action:pan-y}.tabs button{min-height:48px;font-size:20px}
+ .items{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;touch-action:pan-y;overscroll-behavior:contain}
+ .items .item{touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;height:113px;min-height:113px}
+ .item svg{height:72px}.item span{padding:2px;font-size:9px}.item small{font-size:8px}.designer-credit{font-size:9px!important}
+ .wardrobe-bottom{padding:4px 7px;flex:none}#status{font-size:10px;min-height:14px;margin:0 0 3px}.utility{gap:4px}.utility button{min-height:28px;font-size:9px;padding:3px 6px}.install-row{margin-top:3px}
+ #story-panel{max-height:110px;overflow-y:auto;touch-action:pan-y;padding:4px 7px}.story-mode .fairy img{display:none}.story-mode .fairy p{font-size:10px;margin:2px 0}.story-mode #fairy-en{font-size:12px}.story-task p{font-size:10px}.story-buttons button{min-height:30px}.story-mode .item{height:105px;min-height:105px}.story-mode #story-target svg{height:34px}
+ .show-mode main{display:flex}.show-mode .stage{height:auto;min-height:0;flex:1}.show-mode #character{max-width:100%;margin-top:42px}
+}
+@media(orientation:portrait) and (max-width:360px){.items{grid-template-columns:repeat(2,minmax(0,1fr))}.wardrobe-heading span{font-size:8px}.locations button{padding:4px 6px}.scene-actions button{font-size:9px;padding:3px 5px}}
+
+@media(orientation:landscape) and (max-width:950px) and (max-height:500px){.items .item{touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.wardrobe-heading span{font-size:9px}}
+@media(orientation:portrait) and (max-height:700px){.story-mode main{grid-template-rows:minmax(100px,.65fr) minmax(285px,1fr)}.story-mode #story-panel{max-height:90px}.story-mode .fairy p{margin:1px 0}.story-mode .wardrobe-bottom{padding:3px 6px}}
+@media(orientation:portrait) and (max-height:700px){.story-mode .wardrobe-bottom #status,.story-mode .wardrobe-bottom .install-row,.story-mode #reset,.story-mode #guides{display:none}.story-mode .utility{flex-wrap:nowrap}.story-mode .utility button{min-height:28px}.story-mode .wardrobe-bottom{padding:3px 6px}}
