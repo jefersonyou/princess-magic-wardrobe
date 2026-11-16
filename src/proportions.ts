@@ -1,0 +1,7 @@
+import type Phaser from 'phaser';
+// Keep Joy's face; shorten the neck and move the hem upward to give the legs more length.
+const bands=[[0,95,0,95],[95,115,95,105],[115,315,105,296],[315,440,296,440]] as const;
+export function visualY(y:number){for(const [a,b,c,d]of bands)if(y<=b)return c+(y-a)*(d-c)/(b-a);return y}
+export function bodyY(y:number){for(const [a,b,c,d]of bands)if(y<=d)return a+(y-c)*(b-a)/(d-c);return y}
+export function setupProportions(game:Phaser.Game){const buffer=document.createElement('canvas');game.events.on('postrender',()=>{const source=game.canvas;if(buffer.width!==source.width||buffer.height!==source.height){buffer.width=source.width;buffer.height=source.height}const copy=buffer.getContext('2d')!,ctx=source.getContext('2d')!;copy.clearRect(0,0,buffer.width,buffer.height);copy.drawImage(source,0,0);ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,source.width,source.height);const scale=source.height/440;for(const [a,b,c,d]of bands)ctx.drawImage(buffer,0,a*scale,source.width,(b-a)*scale,0,c*scale,source.width,(d-c)*scale);ctx.restore()})}
+export function canonicalFrame(source:HTMLCanvasElement){const c=document.createElement('canvas');c.width=source.width;c.height=source.height;const ctx=c.getContext('2d')!,scale=c.height/440;for(const [a,b,d,e]of bands)ctx.drawImage(source,0,d*scale,c.width,(e-d)*scale,0,a*scale,c.width,(b-a)*scale);return c}
