@@ -84,6 +84,19 @@ export function prepareWorn(scene:Phaser.Scene){
   if([4,7].includes(i)){ctx.fillStyle='#fff6d2';for(const x of [112,168]){ctx.beginPath();ctx.arc(x,64,2.2,0,Math.PI*2);ctx.fill()}}
   ctx.restore();scene.textures.addCanvas('worn-sunglass'+i,c);
  }
+ // Ten pairs of fashion gloves, positioned at both hands.
+ const gloveColors=['#f49bb9','#f2e6e0','#d7af56','#bda3ec','#b7d8f4','#85d6bc','#d98e9a','#a1a3e8','#edc7e5','#db6077'];
+ for(let i=0;i<10;i++){
+  const c=canvas(),ctx=context(c);
+  const glove=(x:number,y:number,flip:boolean)=>{
+   ctx.save();ctx.translate(x,y);ctx.scale(flip?-1:1,1);
+   ctx.fillStyle=gloveColors[i];ctx.strokeStyle=i===2?'#a88436':'#bd839f';ctx.lineWidth=1.1;
+   ctx.beginPath();ctx.moveTo(-6,12);ctx.lineTo(-9,-1);ctx.quadraticCurveTo(-12,-7,-8,-8);ctx.lineTo(-6,-2);ctx.lineTo(-7,-12);ctx.quadraticCurveTo(-7,-16,-4,-14);ctx.lineTo(-2,-3);ctx.lineTo(-2,-17);ctx.quadraticCurveTo(0,-20,2,-16);ctx.lineTo(2,-3);ctx.lineTo(5,-14);ctx.quadraticCurveTo(8,-16,8,-11);ctx.lineTo(6,0);ctx.lineTo(11,-5);ctx.quadraticCurveTo(15,-6,14,-2);ctx.lineTo(7,12);ctx.closePath();ctx.fill();ctx.stroke();
+   ctx.fillStyle=i===7?'#fff5ae':'#fff7f7';ctx.beginPath();ctx.arc(0,8,2.3,0,Math.PI*2);ctx.fill();ctx.restore();
+  };
+  glove(53,246,false);glove(227,246,true);
+  scene.textures.addCanvas('worn-fashionGloves'+i,c);
+ }
  const jewelry=scene.textures.get('wornJewels').getSourceImage() as HTMLImageElement;const jewelIds=['pendant','pearls',...Array.from({length:8},(_,i)=>'collectionNeck'+i),'bracelet',...Array.from({length:7},(_,i)=>'collectionWrist'+i),'scarf'];
  for(const [i,id]of jewelIds.entries()){const c=canvas(),ctx=context(c),x=Math.round(i%5*1254/5),y=Math.round(Math.floor(i/5)*1254/4);const b=bounds(jewelry,x,y,250,313);if(i<10)ctx.drawImage(jewelry,...b,126,110,28,23);else if(i<18)ctx.drawImage(jewelry,...b,209,225,17,9);else ctx.drawImage(jewelry,...b,122,108,36,51);scene.textures.addCanvas('worn-'+id,c)}
  const original=scene.textures.get(body.atlas).getSourceImage() as HTMLImageElement;
@@ -92,7 +105,7 @@ export function prepareWorn(scene:Phaser.Scene){
  for(const [i,id]of ['raincoat','winterCoat'].entries()){const c=canvas(),ctx=context(c);ctx.drawImage(holding,i*512,290,512,640,64,99,184,216);ctx.drawImage(holding,i*512,0,512,290,116,3,100,44);ctx.drawImage(holding,i*512+326,210,12,180,181,32,4.3,103);scene.textures.addCanvas('holding-'+id,c)}
  const arm=scene.textures.get('wornArm').getSourceImage() as HTMLImageElement;const c=canvas(),ctx=context(c);ctx.drawImage(arm,0,750,540,570,166,145,70,74);ctx.drawImage(arm,0,110,887,500,165,3,108,61);ctx.drawImage(arm,435,550,28,360,220,54,3.6,124);scene.textures.addCanvas('holding-bare',c);
 }
-export const hasWorn=(id:string)=>outfitIds.includes(id)||shoeIds.includes(id)||['crown','tiara','flowers','bow','explorerHat','finalCrown'].includes(id)||id.startsWith('collectionHead')||id.startsWith('earring')||/^sunglass\\d+$/.test(id);
+export const hasWorn=(id:string)=>outfitIds.includes(id)||shoeIds.includes(id)||['crown','tiara','flowers','bow','explorerHat','finalCrown'].includes(id)||id.startsWith('collectionHead')||id.startsWith('earring')||/^sunglass\\d+$/.test(id)||/^fashionGloves\\d+$/.test(id);
 export function applyWorn(scene:Phaser.Scene,worn:Set<string>,layers:Map<string,Phaser.GameObjects.Image>,bodyImage:Phaser.GameObjects.Image){
  const outfit=[...worn].find(id=>garments[id].slot==='outer')||[...worn].find(id=>garments[id].slot==='dress');const shoes=[...worn].some(id=>garments[id].slot==='shoes');
  if(outfit||shoes)bodyImage.setTexture('worn-body-'+(outfit?'outfit'+(shoes?'-shoes':''):'base-shoes')).setPosition(0,0).setDisplaySize(280,440);else bodyImage.setPosition(...body.position).setDisplaySize(...body.size);
