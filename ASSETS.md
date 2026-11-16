@@ -63,3 +63,11 @@ v0.5.0 이미지 편집 원본:
 - fairy.png: 이미지 생성 도구로 제작한 오리지널 동료 요정 루미. 원본 exec-d6af11d3-7191-44f6-81b8-4f2c82416087.png.
 - public/audio/*.mp3: 확정된 영어 대사 7개, 무료 edge-tts 7.3.1 / en-US-AriaNeural. 학습 단어 -5% 속도, 일반 대사 +5%, pitch +5Hz. 런타임 API 호출 없음.
 - TTS는 ChatGPT 음성 내보내기로 생성한 것이 아님. 무료 임시 음성으로 제공하며 실제 iPad 발음/억양 청취 검증 필요.
+
+## v0.7.0 전체 여행
+기존 조이 princess-atlas.png 변경 없음. SHA256 36de2af50c6f5da6d205ba79edaa3bc54fe6dd14ae9a0636b52c37d43719ef32.
+- adventure-atlas.png: 기준 조이 참조 생성 exec-b6e2fce2-9938-4e8f-a561-a5de9ecf34d3.png → 목선/수영복 수정 exec-b4a15ff7-a019-4fad-a874-c4fd8f8252f9.png → 외투 앞 여밈 수정 exec-817f4f51-d13b-466c-bf4b-abb0fa1b7394.png → 배경 alpha 보정 exec-e4a7ab47-10ef-48e3-aef0-0aff784f5626.png. 원본 보관.
+- kingdom-scenes.png: 3×2 장소 배경 atlas. exec-f2e20afb-2541-4560-9029-b1bf3c631e35.png.
+- hair-extensions.png: 기존 얼굴/머리를 덮지 않는 뒤 레이어 2개. exec-a811e4a0-fada-4785-ab03-68681d01cdc2.png.
+- 새 atlas 좌표/스냅/레이어는 rig.ts. 신발/장갑은 좌우 각각 정렬. 탐험복은 셔츠와 바지를 분리 합성하여 허리와 발 위치를 맞춤. 장갑/바지 착용 시 원래 손/다리의 중복 노출을 렌더 마스크로 가림.
+- 영어 음성32개: src/data/adventure.json 대사, scripts/generate-voice.py 재현. 무료 Edge TTS AriaNeural, 런타임 호출 없음.
