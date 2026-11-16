@@ -17,7 +17,10 @@ try{const s=JSON.parse(localStorage.getItem('joy-sound')||'null');if(s){voice=Nu
 const audio=new Audio();audio.id='fairy-audio';audio.hidden=true;document.body.append(audio);audio.preload='auto';
 const current=()=>stages[progress.stage];
 const task=()=>current().tasks[Math.min(progress.step,current().tasks.length-1)];
-audio.onended=()=>{if(last==='praise'&&active&&started&&!progress.complete)say(task().voice)};
+audio.onended=()=>{
+ if(!active||!started)return;
+ if(last==='result'&&progress.complete&&progress.stage<stages.length-1){enter(progress.stage+1);return}
+};
 let audioContext:AudioContext|undefined;
 function save(){try{localStorage.setItem(key,JSON.stringify(progress))}catch{document.querySelector('#story-note')!.textContent='기기에 저장하지 못했어요. 지금은 계속 플레이할 수 있어요.'}}
 function say(id:string){last=id;document.querySelector('#story-note')!.textContent='';const [en,ko]=lines[id];document.querySelector('#fairy-en')!.textContent=en;document.querySelector<HTMLElement>('#fairy-en')!.hidden=!subtitles;document.querySelector('#fairy-ko')!.textContent=ko;audio.pause();audio.src=new URL(`../public/audio/${id}.mp3`,import.meta.url).href;audio.volume=voice;if(voice>0)void audio.play().catch(error=>{if(last===id&&error.name!=='AbortError')document.querySelector('#story-note')!.textContent='🔊 다시 듣기를 눌러주세요.'})}
@@ -50,7 +53,14 @@ export function storyAttempt(id:string){
  progress.partial=task().ids.filter(target=>worn.includes(target));
  if(!task().ids.every(target=>progress.partial.includes(target))){say('both');save();render();return}
  progress.learned=[...new Set([...progress.learned,...task().word.toLowerCase().split(' + ')])];progress.step++;progress.partial=[];
- window.dispatchEvent(new Event('joy-story-step-completed'));if(progress.step===current().tasks.length){progress.complete=true;progress.cleared=[...new Set([...progress.cleared,progress.stage])];progress.unlocked=[...new Set([...progress.unlocked,...current().tasks.flatMap(t=>t.ids),current().reward])];say(current().result)}else say('praise');save();render();
+ window.dispatchEvent(new Event('joy-story-step-completed'));if(progress.step===current().tasks.length){
+ progress.complete=true;
+ progress.cleared=[...new Set([...progress.cleared,progress.stage])];
+ progress.unlocked=[...new Set([...progress.unlocked,...current().tasks.flatMap(t=>t.ids),current().reward])];
+ save();render();say(current().result);
+}else{
+ save();render();say(task().voice);
+}
 }
 export function storyMiss(){if(active&&started&&!progress.complete)say('hint')}
 export function setupStory(){
