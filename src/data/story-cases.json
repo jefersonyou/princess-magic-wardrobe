@@ -1,0 +1,647 @@
+{
+  "version": 1,
+  "status": "live",
+  "episodes": [
+    {
+      "id": "palace-door",
+      "stage": 0,
+      "title": "닫힌 왕궁 문",
+      "friend": "요정 루미",
+      "reason": "계절의 별이 흩어져 왕궁 문이 잠겼어요. 친구를 도울 여행 준비가 필요해요.",
+      "intro": "story-palace-door-intro",
+      "result": "story-palace-door-end",
+      "resolved": "왕궁 문이 열렸어요. 준비한 옷으로 여행을 시작해요.",
+      "tasks": [
+        {
+          "ids": [
+            "dress"
+          ],
+          "word": "Dress",
+          "voice": "story-palace-door-step-1",
+          "reasonVoice": "story-palace-door-reason-1"
+        },
+        {
+          "ids": [
+            "shoes"
+          ],
+          "word": "Shoes",
+          "voice": "story-palace-door-step-2",
+          "reasonVoice": "story-palace-door-reason-2"
+        },
+        {
+          "ids": [
+            "crown"
+          ],
+          "word": "Crown",
+          "voice": "story-palace-door-step-3",
+          "reasonVoice": "story-palace-door-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "palace-picnic",
+      "stage": 0,
+      "title": "사라진 초대장",
+      "friend": "토끼 집배원",
+      "reason": "초대장이 꽃잎 사이에 섞였어요. 정원에 갈 옷을 준비해 토끼와 함께 찾아요.",
+      "intro": "story-palace-picnic-intro",
+      "result": "story-palace-picnic-end",
+      "resolved": "옷을 준비해 정원에 나서자 토끼가 초대장을 찾아요.",
+      "tasks": [
+        {
+          "ids": [
+            "picnic"
+          ],
+          "word": "Daisy dress",
+          "voice": "story-palace-picnic-step-1",
+          "reasonVoice": "story-palace-picnic-reason-1"
+        },
+        {
+          "ids": [
+            "roseShoes"
+          ],
+          "word": "Ribbon shoes",
+          "voice": "story-palace-picnic-step-2",
+          "reasonVoice": "story-palace-picnic-reason-2"
+        },
+        {
+          "ids": [
+            "bow"
+          ],
+          "word": "Purple bow",
+          "voice": "story-palace-picnic-step-3",
+          "reasonVoice": "story-palace-picnic-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "palace-jian",
+      "stage": 0,
+      "title": "작은 디자이너의 선물",
+      "friend": "디자이너 지안",
+      "reason": "지안이 만든 꽃무늬 옷을 입고 친구들에게 소개해요. 정답 경쟁 없이 창작을 축하해요.",
+      "intro": "story-palace-jian-intro",
+      "result": "story-palace-jian-end",
+      "resolved": "“지안이가 디자인했어요” 크레딧과 함께 창작을 축하하는 포토타임으로 마무리해요.",
+      "tasks": [
+        {
+          "ids": [
+            "jianDress"
+          ],
+          "word": "Jian’s flower dress",
+          "voice": "story-palace-jian-step-1",
+          "reasonVoice": "story-palace-jian-reason-1"
+        },
+        {
+          "ids": [
+            "jianBoots"
+          ],
+          "word": "Flower boots",
+          "voice": "story-palace-jian-step-2",
+          "reasonVoice": "story-palace-jian-reason-2"
+        },
+        {
+          "ids": [
+            "jianFlower"
+          ],
+          "word": "Flower bow",
+          "voice": "story-palace-jian-step-3",
+          "reasonVoice": "story-palace-jian-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "garden-rabbit",
+      "stage": 1,
+      "title": "비를 피할 곳이 없는 토끼",
+      "friend": "아기 토끼",
+      "reason": "소나기에 토끼가 젖고 있어요. 비옷과 장화, 우산을 준비해 함께 걸어요.",
+      "intro": "story-garden-rabbit-intro",
+      "result": "story-garden-rabbit-end",
+      "resolved": "토끼가 우산 아래로 들어오고 정원의 첫 별이 빛나요.",
+      "tasks": [
+        {
+          "ids": [
+            "raincoat"
+          ],
+          "word": "Raincoat",
+          "voice": "story-garden-rabbit-step-1",
+          "reasonVoice": "story-garden-rabbit-reason-1"
+        },
+        {
+          "ids": [
+            "boots"
+          ],
+          "word": "Boots",
+          "voice": "story-garden-rabbit-step-2",
+          "reasonVoice": "story-garden-rabbit-reason-2"
+        },
+        {
+          "ids": [
+            "umbrella"
+          ],
+          "word": "Umbrella",
+          "voice": "story-garden-rabbit-step-3",
+          "reasonVoice": "story-garden-rabbit-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "garden-puddle",
+      "stage": 1,
+      "title": "물웅덩이 너머의 우편함",
+      "friend": "토끼 집배원",
+      "reason": "비에 젖기 전 편지를 우편함에 가져다줘야 해요. 우편함까지 갈 준비를 해요.",
+      "intro": "story-garden-puddle-intro",
+      "result": "story-garden-puddle-end",
+      "resolved": "편지를 무사히 전해 주고 무지개가 떠요.",
+      "tasks": [
+        {
+          "ids": [
+            "raincoat"
+          ],
+          "word": "Raincoat",
+          "voice": "story-garden-puddle-step-1",
+          "reasonVoice": "story-garden-puddle-reason-1"
+        },
+        {
+          "ids": [
+            "boots"
+          ],
+          "word": "Boots",
+          "voice": "story-garden-puddle-step-2",
+          "reasonVoice": "story-garden-puddle-reason-2"
+        },
+        {
+          "ids": [
+            "umbrella"
+          ],
+          "word": "Umbrella",
+          "voice": "story-garden-puddle-step-3",
+          "reasonVoice": "story-garden-puddle-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "garden-seedling",
+      "stage": 1,
+      "title": "비에 고개를 숙인 새싹",
+      "friend": "정원사 고슴도치",
+      "reason": "새싹 친구에게 작은 비가림을 전해 주려 해요. 먼저 자신을 비로부터 보호해요.",
+      "intro": "story-garden-seedling-intro",
+      "result": "story-garden-seedling-end",
+      "resolved": "새싹이 다시 고개를 들고 고슴도치가 고마워해요.",
+      "tasks": [
+        {
+          "ids": [
+            "boots"
+          ],
+          "word": "Boots",
+          "voice": "story-garden-seedling-step-1",
+          "reasonVoice": "story-garden-seedling-reason-1"
+        },
+        {
+          "ids": [
+            "raincoat"
+          ],
+          "word": "Raincoat",
+          "voice": "story-garden-seedling-step-2",
+          "reasonVoice": "story-garden-seedling-reason-2"
+        },
+        {
+          "ids": [
+            "umbrella"
+          ],
+          "word": "Umbrella",
+          "voice": "story-garden-seedling-step-3",
+          "reasonVoice": "story-garden-seedling-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "snow-fairy",
+      "stage": 2,
+      "title": "날개가 차가워진 요정",
+      "friend": "눈꽃 요정",
+      "reason": "성에 갑자기 눈이 내려 요정의 날개가 차가워졌어요. 따뜻한 준비를 해 온기를 나눠요.",
+      "intro": "story-snow-fairy-intro",
+      "result": "story-snow-fairy-end",
+      "resolved": "요정이 다시 날고 눈꽃 별을 돌려줘요.",
+      "tasks": [
+        {
+          "ids": [
+            "winterCoat"
+          ],
+          "word": "Coat",
+          "voice": "story-snow-fairy-step-1",
+          "reasonVoice": "story-snow-fairy-reason-1"
+        },
+        {
+          "ids": [
+            "scarf"
+          ],
+          "word": "Scarf",
+          "voice": "story-snow-fairy-step-2",
+          "reasonVoice": "story-snow-fairy-reason-2"
+        },
+        {
+          "ids": [
+            "gloves"
+          ],
+          "word": "Mittens",
+          "voice": "story-snow-fairy-step-3",
+          "reasonVoice": "story-snow-fairy-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "snow-lantern",
+      "stage": 2,
+      "title": "꺼진 눈꽃 등불",
+      "friend": "펭귄 등불지기",
+      "reason": "차가운 손으로는 마법 등불을 들기 어려워요. 따뜻한 손을 준비해 등불을 되살려요.",
+      "intro": "story-snow-lantern-intro",
+      "result": "story-snow-lantern-end",
+      "resolved": "등불이 켜져 성의 친구들이 길을 찾을 수 있어요.",
+      "tasks": [
+        {
+          "ids": [
+            "winterCoat"
+          ],
+          "word": "Coat",
+          "voice": "story-snow-lantern-step-1",
+          "reasonVoice": "story-snow-lantern-reason-1"
+        },
+        {
+          "ids": [
+            "gloves"
+          ],
+          "word": "Mittens",
+          "voice": "story-snow-lantern-step-2",
+          "reasonVoice": "story-snow-lantern-reason-2"
+        },
+        {
+          "ids": [
+            "scarf"
+          ],
+          "word": "Scarf",
+          "voice": "story-snow-lantern-step-3",
+          "reasonVoice": "story-snow-lantern-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "snow-parade",
+      "stage": 2,
+      "title": "멈춰 선 눈사람 퍼레이드",
+      "friend": "작은 눈사람",
+      "reason": "추위에 지친 친구들이 퍼레이드를 멈췄어요. 따뜻한 옷차림으로 응원하러 가요.",
+      "intro": "story-snow-parade-intro",
+      "result": "story-snow-parade-end",
+      "resolved": "따뜻하게 준비한 주인공의 응원으로 퍼레이드가 다시 시작돼요.",
+      "tasks": [
+        {
+          "ids": [
+            "scarf"
+          ],
+          "word": "Scarf",
+          "voice": "story-snow-parade-step-1",
+          "reasonVoice": "story-snow-parade-reason-1"
+        },
+        {
+          "ids": [
+            "winterCoat"
+          ],
+          "word": "Coat",
+          "voice": "story-snow-parade-step-2",
+          "reasonVoice": "story-snow-parade-reason-2"
+        },
+        {
+          "ids": [
+            "gloves"
+          ],
+          "word": "Mittens",
+          "voice": "story-snow-parade-step-3",
+          "reasonVoice": "story-snow-parade-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "forest-fox",
+      "stage": 3,
+      "title": "길을 잃은 여우",
+      "friend": "여우 안내원",
+      "reason": "숲의 이정표가 뒤섞였어요. 탐험 옷을 입고 친구와 길을 찾아요.",
+      "intro": "story-forest-fox-intro",
+      "result": "story-forest-fox-end",
+      "resolved": "이정표를 되찾고 여우가 집에 돌아가요.",
+      "tasks": [
+        {
+          "ids": [
+            "explorerHat"
+          ],
+          "word": "Hat",
+          "voice": "story-forest-fox-step-1",
+          "reasonVoice": "story-forest-fox-reason-1"
+        },
+        {
+          "ids": [
+            "explorer"
+          ],
+          "word": "Explorer outfit",
+          "voice": "story-forest-fox-step-2",
+          "reasonVoice": "story-forest-fox-reason-2"
+        },
+        {
+          "ids": [
+            "sneakers"
+          ],
+          "word": "Sneakers",
+          "voice": "story-forest-fox-step-3",
+          "reasonVoice": "story-forest-fox-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "forest-bridge",
+      "stage": 3,
+      "title": "나뭇잎 다리의 약속",
+      "friend": "다람쥐 길잡이",
+      "reason": "다리까지 길을 알려줄 다람쥐를 만나요. 성급하게 달리지 않고 준비하고 천천히 가요.",
+      "intro": "story-forest-bridge-intro",
+      "result": "story-forest-bridge-end",
+      "resolved": "친구와 함께 다리를 건너 숲의 별을 발견해요.",
+      "tasks": [
+        {
+          "ids": [
+            "sneakers"
+          ],
+          "word": "Sneakers",
+          "voice": "story-forest-bridge-step-1",
+          "reasonVoice": "story-forest-bridge-reason-1"
+        },
+        {
+          "ids": [
+            "explorerHat"
+          ],
+          "word": "Hat",
+          "voice": "story-forest-bridge-step-2",
+          "reasonVoice": "story-forest-bridge-reason-2"
+        },
+        {
+          "ids": [
+            "explorer"
+          ],
+          "word": "Explorer outfit",
+          "voice": "story-forest-bridge-step-3",
+          "reasonVoice": "story-forest-bridge-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "forest-birds",
+      "stage": 3,
+      "title": "잃어버린 새의 노래",
+      "friend": "노래하는 새",
+      "reason": "새 친구의 노래가 숲길 어딘가에 숨었어요. 탐험 준비를 하고 조용히 귀 기울여요.",
+      "intro": "story-forest-birds-intro",
+      "result": "story-forest-birds-end",
+      "resolved": "새가 노래를 되찾고 친구들이 함께 따라 불러요.",
+      "tasks": [
+        {
+          "ids": [
+            "explorer"
+          ],
+          "word": "Explorer outfit",
+          "voice": "story-forest-birds-step-1",
+          "reasonVoice": "story-forest-birds-reason-1"
+        },
+        {
+          "ids": [
+            "sneakers"
+          ],
+          "word": "Sneakers",
+          "voice": "story-forest-birds-step-2",
+          "reasonVoice": "story-forest-birds-reason-2"
+        },
+        {
+          "ids": [
+            "explorerHat"
+          ],
+          "word": "Hat",
+          "voice": "story-forest-birds-step-3",
+          "reasonVoice": "story-forest-birds-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "beach-crab",
+      "stage": 4,
+      "title": "뜨거운 모래와 작은 게",
+      "friend": "모래성 게",
+      "reason": "햇빛이 밝고 모래가 뜨거워요. 해변에 어울리는 옷과 신발을 준비해 게를 만나러 가요.",
+      "intro": "story-beach-crab-intro",
+      "result": "story-beach-crab-end",
+      "resolved": "모래성을 함께 만들고 바다의 별을 찾아요.",
+      "tasks": [
+        {
+          "ids": [
+            "swimsuit"
+          ],
+          "word": "Beach outfit",
+          "voice": "story-beach-crab-step-1",
+          "reasonVoice": "story-beach-crab-reason-1"
+        },
+        {
+          "ids": [
+            "sandals"
+          ],
+          "word": "Sandals",
+          "voice": "story-beach-crab-step-2",
+          "reasonVoice": "story-beach-crab-reason-2"
+        },
+        {
+          "ids": [
+            "sunglasses"
+          ],
+          "word": "Sunglasses",
+          "voice": "story-beach-crab-step-3",
+          "reasonVoice": "story-beach-crab-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "beach-shell",
+      "stage": 4,
+      "title": "반짝이는 조개의 길",
+      "friend": "조개 수집가 거북이",
+      "reason": "거북이가 조개를 집으로 가져가려 해요. 밝은 해변에서 눈과 발을 챙겨요.",
+      "intro": "story-beach-shell-intro",
+      "result": "story-beach-shell-end",
+      "resolved": "조개를 전해 주며 수를 세는 짧은 선택 대사를 즐겨요. 수 세기는 통과 조건이 아니에요.",
+      "tasks": [
+        {
+          "ids": [
+            "sandals"
+          ],
+          "word": "Sandals",
+          "voice": "story-beach-shell-step-1",
+          "reasonVoice": "story-beach-shell-reason-1"
+        },
+        {
+          "ids": [
+            "sunglasses"
+          ],
+          "word": "Sunglasses",
+          "voice": "story-beach-shell-step-2",
+          "reasonVoice": "story-beach-shell-reason-2"
+        },
+        {
+          "ids": [
+            "swimsuit"
+          ],
+          "word": "Beach outfit",
+          "voice": "story-beach-shell-step-3",
+          "reasonVoice": "story-beach-shell-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "beach-pair",
+      "stage": 4,
+      "title": "바다 친구와 함께 준비",
+      "friend": "돌고래 우편배달부",
+      "reason": "돌고래가 축제 초대장을 가져왔어요. 준비한 아이템 두 가지를 차례로 확인해요.",
+      "intro": "story-beach-pair-intro",
+      "result": "story-beach-pair-end",
+      "resolved": "복합 지시는 두 아이템이 모두 착용되어야 통과하며, 한 개만 입었을 때 남은 아이템을 명확히 알려줘요.",
+      "tasks": [
+        {
+          "ids": [
+            "swimsuit",
+            "sandals"
+          ],
+          "word": "Beach outfit + Sandals",
+          "voice": "story-beach-pair-step-1",
+          "reasonVoice": "story-beach-pair-reason-1"
+        },
+        {
+          "ids": [
+            "sunglasses"
+          ],
+          "word": "Sunglasses",
+          "voice": "story-beach-pair-step-2",
+          "reasonVoice": "story-beach-pair-reason-2"
+        }
+      ]
+    },
+    {
+      "id": "ball-stars",
+      "stage": 5,
+      "title": "되찾은 별들의 무도회",
+      "friend": "왕국의 모든 친구",
+      "reason": "다섯 장소에서 되찾은 별이 모였어요. 친구들이 준비한 무대에 함께 올라요.",
+      "intro": "story-ball-stars-intro",
+      "result": "story-ball-stars-end",
+      "resolved": "정답 점수 대신 도와준 친구들의 감사, 런웨이, 포토타임으로 축하해요.",
+      "tasks": [
+        {
+          "ids": [
+            "starlight"
+          ],
+          "word": "Gown",
+          "voice": "story-ball-stars-step-1",
+          "reasonVoice": "story-ball-stars-reason-1"
+        },
+        {
+          "ids": [
+            "pearls"
+          ],
+          "word": "Pearl necklace",
+          "voice": "story-ball-stars-step-2",
+          "reasonVoice": "story-ball-stars-reason-2"
+        },
+        {
+          "ids": [
+            "finalCrown"
+          ],
+          "word": "Star crown",
+          "voice": "story-ball-stars-step-3",
+          "reasonVoice": "story-ball-stars-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "ball-jian",
+      "stage": 5,
+      "title": "지안의 디자인 데뷔 쇼",
+      "friend": "디자이너 지안과 친구들",
+      "reason": "친구들이 지안의 디자인을 위한 작은 무대를 마련했어요. 꽃 리본과 팔찌를 조합해요.",
+      "intro": "story-ball-jian-intro",
+      "result": "story-ball-jian-end",
+      "resolved": "저장 사진과 무대에 지안의 디자인 크레딧을 유지하고 자유 꾸미기를 열어요.",
+      "tasks": [
+        {
+          "ids": [
+            "jianDress"
+          ],
+          "word": "Jian’s flower dress",
+          "voice": "story-ball-jian-step-1",
+          "reasonVoice": "story-ball-jian-reason-1"
+        },
+        {
+          "ids": [
+            "jianFlower"
+          ],
+          "word": "Flower bow",
+          "voice": "story-ball-jian-step-2",
+          "reasonVoice": "story-ball-jian-reason-2"
+        },
+        {
+          "ids": [
+            "bracelet"
+          ],
+          "word": "Bracelet",
+          "voice": "story-ball-jian-step-3",
+          "reasonVoice": "story-ball-jian-reason-3"
+        }
+      ]
+    },
+    {
+      "id": "ball-friends",
+      "stage": 5,
+      "title": "네 친구의 우정 무대",
+      "friend": "조이·루나·루비·아리아",
+      "reason": "각자 다른 모습의 친구들이 같은 무대에 서요. 외모나 성별에 따른 정답 없이 선택을 존중해요.",
+      "intro": "story-ball-friends-intro",
+      "result": "story-ball-friends-end",
+      "resolved": "캐릭터를 바꿔도 같은 학습 기회와 보상을 주고, 이후 자유 무대에서는 모든 착장을 허용해요.",
+      "tasks": [
+        {
+          "ids": [
+            "rose"
+          ],
+          "word": "Rose dress",
+          "voice": "story-ball-friends-step-1",
+          "reasonVoice": "story-ball-friends-reason-1"
+        },
+        {
+          "ids": [
+            "roseShoes"
+          ],
+          "word": "Ribbon shoes",
+          "voice": "story-ball-friends-step-2",
+          "reasonVoice": "story-ball-friends-reason-2"
+        },
+        {
+          "ids": [
+            "flowers"
+          ],
+          "word": "Flowers",
+          "voice": "story-ball-friends-step-3",
+          "reasonVoice": "story-ball-friends-reason-3"
+        }
+      ]
+    }
+  ]
+}

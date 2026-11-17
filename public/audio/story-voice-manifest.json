@@ -1,0 +1,854 @@
+{
+  "story-palace-door-step-1": {
+    "text": "Put on your royal dress.",
+    "textSha256": "27524defec82c6430c1bc1c13e568d86c41ce145132479a269176d32d6b728fe",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15120
+  },
+  "story-palace-door-end": {
+    "text": "The door is open! Let’s find our friends.",
+    "textSha256": "4e040870a9e4ea642b06fe6af75ae13f618e0dabb80a884e9dd4d335b73bcb37",
+    "voice": "en-US-AriaNeural",
+    "bytes": 27792
+  },
+  "story-palace-door-reason-1": {
+    "text": "Your dress is ready for an adventure.",
+    "textSha256": "7b0ffa263e1bc2335483a7dc80cf26ab9d2425c9549dd64503ef88184b446965",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18576
+  },
+  "story-palace-door-intro": {
+    "text": "Good morning! Our friends need help. Let’s get ready.",
+    "textSha256": "7504d8c86fddfb4b79743bad8536e4f25722d186aa0b03d732c7d80d5c87f32a",
+    "voice": "en-US-AriaNeural",
+    "bytes": 37008
+  },
+  "story-palace-door-reason-2": {
+    "text": "Your shoes protect your feet.",
+    "textSha256": "6354e37103ab9979b16a6ced42151ae169ffae047137e40b214cb5221caf9e94",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15984
+  },
+  "story-palace-door-step-2": {
+    "text": "Put on your shoes.",
+    "textSha256": "32ca7eb7c9123e05f7fecce1a7b1191ffbc5b6180452e3bbc9dc22af1944c5bb",
+    "voice": "en-US-AriaNeural",
+    "bytes": 13536
+  },
+  "story-palace-door-step-3": {
+    "text": "Add your little crown.",
+    "textSha256": "73bffbd6f5dbdc3d83df88e284e5f36cb5b15e4d9c2f6bb8ce7d6c7e42c24fff",
+    "voice": "en-US-AriaNeural",
+    "bytes": 13824
+  },
+  "story-palace-door-reason-3": {
+    "text": "You are ready to help the kingdom.",
+    "textSha256": "ec7a6aec48ebbf6e5fd46da22c5cf0f94442ceb91a58dd29f308c455f8a7b05e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16848
+  },
+  "story-palace-picnic-end": {
+    "text": "Here is the letter! The picnic can begin.",
+    "textSha256": "be2a60b974c6d2df02cca675b7704d379c04000f7e329052b0ceda05892754fc",
+    "voice": "en-US-AriaNeural",
+    "bytes": 27072
+  },
+  "story-palace-picnic-step-1": {
+    "text": "Choose your daisy dress.",
+    "textSha256": "1f88179dc991d5363ac73102cf157bdefcd9bbffa00edfdb509f6c8e34e2d13b",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15120
+  },
+  "story-palace-picnic-intro": {
+    "text": "A letter is hiding in the garden. Let’s look for it.",
+    "textSha256": "a78180e5eb1c602b04ba5711b55821b97bb9d8b4f2d4dcff1231e073bfd2b075",
+    "voice": "en-US-AriaNeural",
+    "bytes": 30096
+  },
+  "story-palace-picnic-reason-1": {
+    "text": "Flowers make our picnic bright.",
+    "textSha256": "f0390653636c57aaf296c637ed297e927b9a184cc8f33768a19d6850fecb3f84",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18432
+  },
+  "story-palace-picnic-step-2": {
+    "text": "Put on your ribbon shoes.",
+    "textSha256": "70ac844aaffc7e1ded4651e5780c509be7fe52a25408d50502b4ea7294551c32",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14976
+  },
+  "story-palace-picnic-reason-2": {
+    "text": "We can walk along the garden path.",
+    "textSha256": "e62cca26feae5c7037dccf5d88caa103ef87997ff67aa66150c51319134058d0",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18576
+  },
+  "story-palace-picnic-step-3": {
+    "text": "Wear your purple bow.",
+    "textSha256": "3c424beb05b97814f09bc069331651db74516634704674d2427be6cffade0661",
+    "voice": "en-US-AriaNeural",
+    "bytes": 13968
+  },
+  "story-palace-picnic-reason-3": {
+    "text": "Your bow matches the flowers.",
+    "textSha256": "ed27b3f0bd3ed4bcd43d0427432bd944c78fd58435ec18af69cc8d52b95e7af5",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17280
+  },
+  "story-palace-jian-intro": {
+    "text": "Jian made a sunny dress for you. Let’s try it on.",
+    "textSha256": "87af6b2bf923a3ceb7c82282d8074c3781fb2ffd12b9b6644e97e0c05d7196de",
+    "voice": "en-US-AriaNeural",
+    "bytes": 30672
+  },
+  "story-palace-jian-step-1": {
+    "text": "Put on Jian’s flower dress.",
+    "textSha256": "91c65e682bb42fe1c9d4c2ef22a2a0865c692a52ad011a6493f366a124e626cc",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-palace-jian-reason-1": {
+    "text": "Look at the yellow flowers!",
+    "textSha256": "502ba6a282714ebc99809df8b5f7b0406798085ba1e66a606adceb41d23a913e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15840
+  },
+  "story-palace-jian-end": {
+    "text": "You made it, Jian! Let’s take a picture.",
+    "textSha256": "e63031133363681a2822fe60874a1f1bfb21864b2832d81c861c1b78002e5ce5",
+    "voice": "en-US-AriaNeural",
+    "bytes": 28224
+  },
+  "story-palace-jian-step-2": {
+    "text": "Put on your flower boots.",
+    "textSha256": "992633b3cadc00f54b56b08db0c53901d4359a236673c6413950e5913ff9721d",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15408
+  },
+  "story-palace-jian-reason-2": {
+    "text": "Your boots match your dress.",
+    "textSha256": "a997f0c513e58154dd91d50d82af77ff1dd98a141b3f2eb48fee4ef29d510126",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16416
+  },
+  "story-palace-jian-step-3": {
+    "text": "Add the blue flower bow.",
+    "textSha256": "18bd8e732a09b334ca1174b179d3a9e9b68bce4d8728b6fcdfe7d3d39282bf27",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15984
+  },
+  "story-palace-jian-reason-3": {
+    "text": "Thank you for your lovely design, Jian!",
+    "textSha256": "b9855401c6ff71a8482e7e54094cd3cf604462509bae189d1f816ebb83945756",
+    "voice": "en-US-AriaNeural",
+    "bytes": 21168
+  },
+  "story-garden-rabbit-intro": {
+    "text": "It's raining. The little rabbit is wet.",
+    "textSha256": "f92c34fc66bed81210514ef0c3bb7c91b106fee32dc9a96c996a47ba3c9055d8",
+    "voice": "en-US-AriaNeural",
+    "bytes": 26064
+  },
+  "story-garden-rabbit-reason-1": {
+    "text": "It helps you stay dry.",
+    "textSha256": "5f5592c0a515d94b031e838463bc5d9078c1c8ca98dc29df55ff0b314d4a81c6",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15408
+  },
+  "story-garden-rabbit-step-1": {
+    "text": "Put on your yellow raincoat.",
+    "textSha256": "92d08b40dd0a103ff07d4ccbc3efe32e20b9444a46091fef077ff52f7fd61fd1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16416
+  },
+  "story-garden-rabbit-end": {
+    "text": "Come under the umbrella, little rabbit!",
+    "textSha256": "6c3a4ace453bed841d1a041a5bcbf83c304e07ce7f544108dde50ab6fcc6234b",
+    "voice": "en-US-AriaNeural",
+    "bytes": 20304
+  },
+  "story-garden-rabbit-step-2": {
+    "text": "Put on your boots.",
+    "textSha256": "70ad8289ef58f25055a7fc623bad7660e93862af0eb76bc33b8a03887c7e4d1e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 12960
+  },
+  "story-garden-rabbit-reason-2": {
+    "text": "Your boots keep your feet dry.",
+    "textSha256": "7dc744de947a87aaec03acd2e12c96ab8b5ed0b937d259c3873ba386d421c1c1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-garden-rabbit-reason-3": {
+    "text": "We can share our umbrella.",
+    "textSha256": "bcde872623ae2aa7bd364a24d68e89124bd15f857c51f4fd14f16e696c22dc39",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15696
+  },
+  "story-garden-rabbit-step-3": {
+    "text": "Hold your umbrella.",
+    "textSha256": "eae98e9d3d91ec2cb37bd7ea2498e642ec9462abf5cba6a169d7550d9bfa3865",
+    "voice": "en-US-AriaNeural",
+    "bytes": 13248
+  },
+  "story-garden-puddle-end": {
+    "text": "The letter is dry. Thank you for helping!",
+    "textSha256": "7c9d27495405795e1ad118d2648d87bb8aea38251b3dd26b583157c8797e4c06",
+    "voice": "en-US-AriaNeural",
+    "bytes": 26928
+  },
+  "story-garden-puddle-step-1": {
+    "text": "Wear your raincoat, please.",
+    "textSha256": "8f7c0a21f8fb66cd2ea88b08fb7232314957c082a629d286a93f389cdd7cb4f1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16992
+  },
+  "story-garden-puddle-intro": {
+    "text": "There is a big puddle. The letter must stay dry.",
+    "textSha256": "5fc81646ce0ad2f8af1d0740cd4731e0a127689a9fda6131c9ac9aa508b60105",
+    "voice": "en-US-AriaNeural",
+    "bytes": 30384
+  },
+  "story-garden-puddle-reason-1": {
+    "text": "Rain slides off the coat.",
+    "textSha256": "532d9ed2834a66639e86a5953572667274f9b1706dde1ee2951552e7f250fd73",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16704
+  },
+  "story-garden-puddle-reason-2": {
+    "text": "Boots help us walk through the rain.",
+    "textSha256": "b1bc0e216091ddac8f2c82ccdda71532fcc85c92ec4264662f79c051274e50e8",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18000
+  },
+  "story-garden-puddle-step-2": {
+    "text": "Boots on! Now your feet are ready.",
+    "textSha256": "ee604eec22ec1795670465c7960e9dc6ac158e78d62dd61f9dc6884db365b47e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 25488
+  },
+  "story-garden-puddle-reason-3": {
+    "text": "The letter can stay dry, too.",
+    "textSha256": "2c44459b5db133f46c785803ef9cce95750bdba01e137f7b907281b4c7d205a1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 19584
+  },
+  "story-garden-puddle-step-3": {
+    "text": "Take your umbrella with you.",
+    "textSha256": "8a45aba6a4a073f48fedc2abf40bb75e62a952d954c7a2376ba37f2f03cde4c1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15408
+  },
+  "story-garden-seedling-end": {
+    "text": "The little plant is standing tall again!",
+    "textSha256": "821ee65c597d5f41744757b7c4d9a7951117cd36fdc2d21885e0e67c031ea451",
+    "voice": "en-US-AriaNeural",
+    "bytes": 19872
+  },
+  "story-garden-seedling-reason-1": {
+    "text": "The ground is wet today.",
+    "textSha256": "5a895f3d03fd4c22eb53d697b244bf0a495f4107119a0243077ef8c06849554b",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15408
+  },
+  "story-garden-seedling-step-1": {
+    "text": "Put your boots on first.",
+    "textSha256": "7f186e4666c12ebb2e10784d1a14d630940946a33a112e526f3ddb596b0839a1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15552
+  },
+  "story-garden-seedling-intro": {
+    "text": "The small plant needs a little shelter. Let’s help.",
+    "textSha256": "17aefa442a78b282966e69159ae5bc4cb429dda3563b90ffb2b19bb922379c0a",
+    "voice": "en-US-AriaNeural",
+    "bytes": 30384
+  },
+  "story-garden-seedling-step-2": {
+    "text": "Now put on your raincoat.",
+    "textSha256": "9648348a56eab80f529a42637eda53624b41627d0162d49b8769d27cc9ae3d17",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15984
+  },
+  "story-garden-seedling-reason-2": {
+    "text": "You can help while staying dry.",
+    "textSha256": "051847c5f8216617ad6b7550295344368b756941ed358cc576ab24cf620d0582",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16992
+  },
+  "story-garden-seedling-step-3": {
+    "text": "Open your umbrella.",
+    "textSha256": "a3c76583e12899bade38a7a9ec519b63cedaf3db6af604a5f4e327feb8af0758",
+    "voice": "en-US-AriaNeural",
+    "bytes": 13392
+  },
+  "story-garden-seedling-reason-3": {
+    "text": "A little shelter makes a big difference.",
+    "textSha256": "2d5a6eca17595d42fba47ae440c2cc5c41eae53e0c22ac08692d0ef67a992b06",
+    "voice": "en-US-AriaNeural",
+    "bytes": 19440
+  },
+  "story-snow-fairy-end": {
+    "text": "Warm hands, warm hearts! The fairy can fly.",
+    "textSha256": "db918a71cbbd8140fe94d27ae9b6c1803e78fbecbea05984ac6dfc96cd8c5479",
+    "voice": "en-US-AriaNeural",
+    "bytes": 31680
+  },
+  "story-snow-fairy-intro": {
+    "text": "Brr! It's cold. The fairy needs a warm friend.",
+    "textSha256": "42fef5e6edfc7d185faf9336aa1130cfd06c6e1c5d01de8d8702463a28ab2f4b",
+    "voice": "en-US-AriaNeural",
+    "bytes": 38736
+  },
+  "story-snow-fairy-step-1": {
+    "text": "Put on your warm coat.",
+    "textSha256": "26bd6cd82c35c8f0bdd298fcb6cc2cbd8ec1859769dd8af10ccdfed72f27cd2c",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14688
+  },
+  "story-snow-fairy-reason-1": {
+    "text": "Your coat keeps your body warm.",
+    "textSha256": "5cf6532b088b468db0b43d648dc4fe8906c6f24f0b65fc2abe0f8411af14c310",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17568
+  },
+  "story-snow-fairy-step-2": {
+    "text": "Wrap your scarf around your neck.",
+    "textSha256": "98ca8909947d3d9a0cdf410cd2564f355ddd6c209e1f10b70aea6376bb4ee7c3",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17712
+  },
+  "story-snow-fairy-reason-2": {
+    "text": "A scarf feels soft and warm.",
+    "textSha256": "ed924ff36b3afe614dc6f1f7ae82dd5b3191831c1b0aeb72d34ad33eedb7e7ac",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18000
+  },
+  "story-snow-fairy-reason-3": {
+    "text": "Your hands are warm now.",
+    "textSha256": "750aa1e15da8fff20dce67e1fcbc4e4324c9f382e3e580a494d33fe8c21b7768",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14976
+  },
+  "story-snow-fairy-step-3": {
+    "text": "Put on your mittens.",
+    "textSha256": "c744141fa392c6e2820d19e4675e4b216bc170919142fbdea04bdfa6f7e874f1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 13104
+  },
+  "story-snow-lantern-intro": {
+    "text": "The lantern is dark. Let’s bring back its warm light.",
+    "textSha256": "fa67f6382e41da7fd3d9015530066c3569fde4ff5605fc59f86b8e006f30d465",
+    "voice": "en-US-AriaNeural",
+    "bytes": 31392
+  },
+  "story-snow-lantern-step-1": {
+    "text": "Choose your winter coat.",
+    "textSha256": "cf8b11cf08d38dd924bd35dc2781911f3c6bc1f9eb0b6ab7676ad95c41dc9bd9",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14400
+  },
+  "story-snow-lantern-end": {
+    "text": "Look! The lantern is glowing again.",
+    "textSha256": "7cdc01ed80fd75150af5062b32b47f491c3b53a1b5d02710d443b97756eadc64",
+    "voice": "en-US-AriaNeural",
+    "bytes": 25776
+  },
+  "story-snow-lantern-reason-1": {
+    "text": "A warm coat is good for a snowy day.",
+    "textSha256": "c4f19d390f6ece314d8b60fb49a66403150f1e72331f6629a174b099b484fdb4",
+    "voice": "en-US-AriaNeural",
+    "bytes": 20880
+  },
+  "story-snow-lantern-reason-2": {
+    "text": "They keep your fingers together and warm.",
+    "textSha256": "4fc5770772d79f7f991097cbc8a3a474fb80135a23ade16f996c8a5a497de2b2",
+    "voice": "en-US-AriaNeural",
+    "bytes": 19728
+  },
+  "story-snow-lantern-step-2": {
+    "text": "Mittens on, please.",
+    "textSha256": "e00e787e3e7d36c4c8b0c44cfe004c7a62dc606984514c187027c25684847ddd",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16128
+  },
+  "story-snow-lantern-step-3": {
+    "text": "Finish with your red scarf.",
+    "textSha256": "93193e40d2ef6bdf7460c34dbb3d4c93db2e1f5482697baab8f621fab75de029",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16560
+  },
+  "story-snow-parade-end": {
+    "text": "Wave hello! The happy parade is moving.",
+    "textSha256": "abbca710d199a778bd957f07fffe2b2f03b70d0e0e5a278cc5ef7b08610b1ce3",
+    "voice": "en-US-AriaNeural",
+    "bytes": 27648
+  },
+  "story-snow-lantern-reason-3": {
+    "text": "Now we are ready for the snow.",
+    "textSha256": "98e2a519ae8f39636e59d9dc9f8ee0b34b5867e358fe43676c6039609610b1a0",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16992
+  },
+  "story-snow-parade-step-1": {
+    "text": "Wear your cozy scarf.",
+    "textSha256": "70b65349431b221c599a47c4177384701df7c1041ff395660dc68db875f02765",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14976
+  },
+  "story-snow-parade-step-2": {
+    "text": "Put your coat on, too.",
+    "textSha256": "3d7c2dfaa431c604c0301149c1b6a0c1d8807fa39765353518135d86716053bd",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15984
+  },
+  "story-snow-parade-reason-1": {
+    "text": "It wraps softly around your neck.",
+    "textSha256": "2b06f2120b0c4a815abd39b74a7cf8916c8d517f2ccd75de1135e27da4930855",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18720
+  },
+  "story-snow-parade-reason-2": {
+    "text": "We dress warmly before we go.",
+    "textSha256": "0cafc0179ab5374c35651f9d02897d1c3a089f621d1ba5a6f226cf23e41f660a",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18000
+  },
+  "story-snow-parade-intro": {
+    "text": "The parade has stopped. Our friends feel cold.",
+    "textSha256": "00ef00c958d3c2bc14a88c018587751ef5ab4150a8e3c8985e44926bc2ec49f5",
+    "voice": "en-US-AriaNeural",
+    "bytes": 29088
+  },
+  "story-snow-parade-reason-3": {
+    "text": "Now we can wave to our friends.",
+    "textSha256": "31af4c9c5fdf303705aa2175d4f0a6fc879c4bf77e8ed4be67388acd5ccfd07e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-snow-parade-step-3": {
+    "text": "Keep your hands warm with mittens.",
+    "textSha256": "a5c1d664a0da69840b856aff0299fa04e8c0a31a698cc0f35aa69c9659effc72",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17712
+  },
+  "story-forest-fox-end": {
+    "text": "This is the way home. Thank you, explorer!",
+    "textSha256": "12cd118d000451433c55d3d80082427841b5d504ae39b6aeda5f7c756421408c",
+    "voice": "en-US-AriaNeural",
+    "bytes": 28800
+  },
+  "story-forest-fox-intro": {
+    "text": "The fox is lost. Let’s follow the forest path.",
+    "textSha256": "8a71b26bbed59ff686ade77ecd47cd4cc74bc0cee6fd3d58e737cca1bef0e2ff",
+    "voice": "en-US-AriaNeural",
+    "bytes": 30816
+  },
+  "story-forest-fox-reason-1": {
+    "text": "Your hat is ready for the journey.",
+    "textSha256": "2f678b16607163fddcde0535d6942789b1cd7b67d461eea395d9e57eae1d9034",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-forest-fox-step-1": {
+    "text": "Put on your explorer hat.",
+    "textSha256": "0dc01132e765bff502de82f553a5110d216e12a473c3036b6aebe1894a2a8027",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16128
+  },
+  "story-forest-fox-step-2": {
+    "text": "Wear your explorer outfit.",
+    "textSha256": "c5dea840e136e6fc2526596256350afa86f5958a44b95f8a0e1bad3eb2a21fcc",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16848
+  },
+  "story-forest-fox-reason-2": {
+    "text": "We can move along the forest path.",
+    "textSha256": "cbc1a925be9c3eb612bc034dd6409a38330679bce7c817d7e9f6f8ac3d1b93af",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18576
+  },
+  "story-forest-fox-step-3": {
+    "text": "Put on your sneakers.",
+    "textSha256": "ce743c0a7c669f91a5cfaa4ded6e858a5b59eaa4d9bc55b857f7cda52ca75238",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14256
+  },
+  "story-forest-fox-reason-3": {
+    "text": "Comfortable shoes help us walk.",
+    "textSha256": "aa3d985946fdad3cb82e517da80daf02756c63699f497e6c221420c2c669e7b8",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18432
+  },
+  "story-forest-bridge-intro": {
+    "text": "A little bridge is ahead. Let’s get ready to walk.",
+    "textSha256": "4e67e5a4d00ad57b88ff99e76fd9931a482a0da8ab2afcb4dcd1c057859c7f44",
+    "voice": "en-US-AriaNeural",
+    "bytes": 29664
+  },
+  "story-forest-bridge-end": {
+    "text": "We made it together. What a lovely view!",
+    "textSha256": "5956cf25ca77f4b106a0dabc1f1c5db3573e418b8f2dfd8ae54a76622e7bf0d0",
+    "voice": "en-US-AriaNeural",
+    "bytes": 27072
+  },
+  "story-forest-bridge-step-1": {
+    "text": "Choose your walking shoes.",
+    "textSha256": "d9cce564583ebe1f9d7ea5d1c87041a2e76158a4b30bac46a465f8c7145a17d8",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15552
+  },
+  "story-forest-bridge-step-2": {
+    "text": "Wear your hat.",
+    "textSha256": "83ecb969566d233ac2ee9b4b75bbef56ebb412612f6eabb0aaa8a9b30326af53",
+    "voice": "en-US-AriaNeural",
+    "bytes": 12240
+  },
+  "story-forest-bridge-reason-1": {
+    "text": "Sneakers feel comfortable.",
+    "textSha256": "3a412fe4aff1f0f9d5dd24bcf09e43e109f18cbdbcc9dc9c0f35ea0c8a447532",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16128
+  },
+  "story-forest-bridge-reason-2": {
+    "text": "We are going on a forest adventure.",
+    "textSha256": "3eff79bc9e7c74adf6abca407437f6cb85f575227c754d9ddec1024ec02a41bb",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18720
+  },
+  "story-forest-bridge-step-3": {
+    "text": "Put on your explorer outfit.",
+    "textSha256": "efbea6b62774fb790ddcf7bd7f7360feafe024c9d55dd7d98cec48b0729d9d5a",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17280
+  },
+  "story-forest-birds-intro": {
+    "text": "Can you hear a little bird? Let’s find our friend.",
+    "textSha256": "b06a035815a7b3985b66c9661b99aa6d8c77e873acf0efc3925b3c815c3e3e93",
+    "voice": "en-US-AriaNeural",
+    "bytes": 28800
+  },
+  "story-forest-bridge-reason-3": {
+    "text": "Ready? Let’s walk together, slowly.",
+    "textSha256": "fb2a936213d6e2608be0c02b12063f891abb3cdfebf08f2e0ba9f8f526edc42d",
+    "voice": "en-US-AriaNeural",
+    "bytes": 27072
+  },
+  "story-forest-birds-step-1": {
+    "text": "Get dressed for our adventure.",
+    "textSha256": "820b82943ca9185fbf1fe6a8485340eaec8f3eb809ce978940c8178c6993676a",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16272
+  },
+  "story-forest-birds-end": {
+    "text": "Tweet, tweet! The forest has its song again.",
+    "textSha256": "923c5a0fbb296c9a92635a768f39d676bbbc881d359117bdf53672d37b559c39",
+    "voice": "en-US-AriaNeural",
+    "bytes": 29520
+  },
+  "story-forest-birds-step-2": {
+    "text": "Put your sneakers on.",
+    "textSha256": "a7f662f64d42e7dd3085ad77e2b7860be017c29cb00f48422a0758f8f5937afb",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14400
+  },
+  "story-forest-birds-reason-1": {
+    "text": "Our outfit is ready for the forest.",
+    "textSha256": "fdcd9370378c890df97cf51368aec353620f25369a178ab9e9efbc88759dd4dc",
+    "voice": "en-US-AriaNeural",
+    "bytes": 19152
+  },
+  "story-forest-birds-reason-2": {
+    "text": "Soft steps help us listen.",
+    "textSha256": "76e0b911700daa235482ec4e6fd37f4c383a7b22f9182fcd8c951ad2de3df978",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-forest-birds-step-3": {
+    "text": "Add your explorer hat.",
+    "textSha256": "486d5a5108a93ba46f4f601b6c5d150375c6c2af32b77af1b2484ee74f60a32f",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15840
+  },
+  "story-beach-crab-end": {
+    "text": "The crab is smiling. Let’s build a sandcastle!",
+    "textSha256": "82d2f8108defde1b57550f7aabc00f5f65300a9c67593df11b66d130f37eb6be",
+    "voice": "en-US-AriaNeural",
+    "bytes": 30240
+  },
+  "story-forest-birds-reason-3": {
+    "text": "We are ready to look and listen.",
+    "textSha256": "2a380a823c496236f256b76c60772c55e513e1fa0887b3f674ccbc6ba00a1b1b",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16848
+  },
+  "story-beach-crab-intro": {
+    "text": "The sun is bright. The crab needs our help.",
+    "textSha256": "0faaf984d21c83bf1bbf8530d380d8d67122f03e3b8431fa883657545b16bec3",
+    "voice": "en-US-AriaNeural",
+    "bytes": 28080
+  },
+  "story-beach-crab-step-1": {
+    "text": "Put on your beach outfit.",
+    "textSha256": "609f18aa9f7c4cc6a8864b13e0540be65626798954d2eb7b89050cfa2c4dd094",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15264
+  },
+  "story-beach-crab-reason-2": {
+    "text": "Your feet are ready for the beach.",
+    "textSha256": "0106c27ade15ea411626d02f3530833f6812ed5ba708dd887e36064da39002a6",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17136
+  },
+  "story-beach-crab-reason-1": {
+    "text": "Light clothes feel comfortable.",
+    "textSha256": "8ca9ceb4aa725ddc36d35e4dba6cdcb268aba7c10831105b5ab97d3ed0d52f8e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17136
+  },
+  "story-beach-crab-step-2": {
+    "text": "Put on your sandals.",
+    "textSha256": "f1a8adef552ec68103729933ceda6b03437c4cf32c2c023379695df305f74d2b",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14112
+  },
+  "story-beach-crab-step-3": {
+    "text": "Wear your sunglasses.",
+    "textSha256": "988a2f9d9113132f22ca88bc69276af38493d3b1a2a0be53f3b6f74be9bfe9e4",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14976
+  },
+  "story-beach-crab-reason-3": {
+    "text": "They help in the bright sunshine.",
+    "textSha256": "605f8924d44ca2c5603283ad0d9824dcb2156f25714b1222372dd0cc8c1056e1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16704
+  },
+  "story-beach-shell-intro": {
+    "text": "The shells are shining. Let’s help the turtle.",
+    "textSha256": "da8fb74ee6ad5a816371b7ebd79df9b5ce5f2861ceca455caa7c51fd71c12e4f",
+    "voice": "en-US-AriaNeural",
+    "bytes": 27648
+  },
+  "story-beach-shell-end": {
+    "text": "One shell, two shells! The turtle is home.",
+    "textSha256": "57bbe0236ecf288994714d5e28a29ee9c3b81c056d58623ed8fbb6ae2f0e4363",
+    "voice": "en-US-AriaNeural",
+    "bytes": 30816
+  },
+  "story-beach-shell-step-1": {
+    "text": "Sandals on, please.",
+    "textSha256": "81d26a95d89a2b6294361876c9812bb4078a4cc649febf93697b9fe27fa788fd",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16560
+  },
+  "story-beach-shell-reason-1": {
+    "text": "We wear shoes on the hot sand.",
+    "textSha256": "4728689d29388f30441a89457361cd43f322b033b99efa33a3fa63c994ad9cfd",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-beach-shell-step-2": {
+    "text": "Put your sunglasses on.",
+    "textSha256": "0c6c587c9e85afc5185d670acff2aa256eadc8444c1fe76bdfdf214dfa6c1ebd",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15408
+  },
+  "story-beach-shell-step-3": {
+    "text": "Choose your beach outfit.",
+    "textSha256": "7461c5ae26568d10ea2a8097e8a367eea80fbde1898a27fa4628fb13283674c1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15264
+  },
+  "story-beach-shell-reason-2": {
+    "text": "Now the bright light feels softer.",
+    "textSha256": "6da6ef506d2f043095e6b33dd4259e62329df2fea51b8f43d7583e895090efd9",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18576
+  },
+  "story-beach-shell-reason-3": {
+    "text": "We are dressed for a sunny day.",
+    "textSha256": "0a21dfe845ffccf1a1ed322bf0ab0215f97aca6f22423ee1691d75e6aa795b75",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17136
+  },
+  "story-beach-pair-step-1": {
+    "text": "Put on your beach outfit and sandals.",
+    "textSha256": "8aa7180b45000214c86db033d986817e9fc194e82984116348cccc0f2e9b2428",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18720
+  },
+  "story-beach-pair-end": {
+    "text": "Both are on! Let’s go to the festival.",
+    "textSha256": "8437937a673b3f5b6c36a1b77cf0b16966aed3dee4ac4388269195e26a762cb8",
+    "voice": "en-US-AriaNeural",
+    "bytes": 26208
+  },
+  "story-beach-pair-intro": {
+    "text": "An invitation is here! Let’s get ready for the sea festival.",
+    "textSha256": "3963a9f3e98b65d50e3b09dd0c547529b571095748af44d6a604a490ae0915e4",
+    "voice": "en-US-AriaNeural",
+    "bytes": 34128
+  },
+  "story-beach-pair-reason-1": {
+    "text": "Two things help us get ready. Take your time.",
+    "textSha256": "99066ac40cbe33417f839a8ac4f6008858b8639446ebe3b3fc69fa3b562df661",
+    "voice": "en-US-AriaNeural",
+    "bytes": 28800
+  },
+  "story-beach-pair-reason-2": {
+    "text": "Now your sunny look is ready.",
+    "textSha256": "0829479122fa5c50c744e0b4824c4deeab812b6914a8ac86784e5a590725fee8",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16272
+  },
+  "story-beach-pair-step-2": {
+    "text": "Add your sunglasses.",
+    "textSha256": "c041a7744b80a496bde63ae465c4fe6719716c05f3e3020ca5064b423674fc38",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15120
+  },
+  "story-ball-stars-intro": {
+    "text": "All our friends are here. Let’s celebrate together!",
+    "textSha256": "9ba62ecf04fde2b156c0aa967441c2aa2029f0a02646777ba2d0031e14ce729e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 29664
+  },
+  "story-ball-stars-end": {
+    "text": "You did it! Let’s walk, wave, and take a picture.",
+    "textSha256": "5eacd915bb7b035ddc07f488c4d15e7ddb9bf732a1567455ddf5231d4d09e16a",
+    "voice": "en-US-AriaNeural",
+    "bytes": 32400
+  },
+  "story-ball-stars-reason-1": {
+    "text": "The stars sparkle on your dress.",
+    "textSha256": "2a78a01582cc4dd46d27e7337b75201588ea08917bca184cd95038c26329e5ee",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17856
+  },
+  "story-ball-stars-step-1": {
+    "text": "Put on your starlight dress.",
+    "textSha256": "996541bb290603327cce21d9174c8962218adfaae3fb68d26ac3b7efdeecd5c1",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16272
+  },
+  "story-ball-stars-step-2": {
+    "text": "Wear your pearl necklace.",
+    "textSha256": "24c275248e8dfe574491f668d2a59f3f953c2bde818989258868229575679e85",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14832
+  },
+  "story-ball-stars-reason-2": {
+    "text": "The pearls shine softly.",
+    "textSha256": "ceb8224fd5e7afc66628cfed1c77388da8af00a5c0814f2e861886000674b974",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16128
+  },
+  "story-ball-stars-step-3": {
+    "text": "Add the little star crown.",
+    "textSha256": "10945b9d0f23cfa5bda85f1c138c6109f72599ad25ff096a12730d8bb3948154",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15552
+  },
+  "story-ball-stars-reason-3": {
+    "text": "You helped our kingdom shine again.",
+    "textSha256": "a214411f5cb2d11f02540e3d7fbaf30cbbf81c9455204d58b352018cfb43d019",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-ball-jian-end": {
+    "text": "Designed by Jian. Worn with joy!",
+    "textSha256": "3a98469103734df0323f1e9d80e0bdfaefa423cb9d759d4c553f45d9d94c391d",
+    "voice": "en-US-AriaNeural",
+    "bytes": 26640
+  },
+  "story-ball-jian-step-1": {
+    "text": "Choose Jian’s sunny dress.",
+    "textSha256": "8408bd052c2c2b243e052dfa53a3dccd890f26090a7ab5a88f90f5cfbe96818e",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16560
+  },
+  "story-ball-jian-intro": {
+    "text": "Jian's design is on the runway today. Let’s make it shine.",
+    "textSha256": "d0afb0e5f210d31d2afcbb79d386cdd8f40cf806a33b5a3f4df7054dfd3fa253",
+    "voice": "en-US-AriaNeural",
+    "bytes": 33408
+  },
+  "story-ball-jian-reason-1": {
+    "text": "A young designer made these lovely flowers.",
+    "textSha256": "1e8bfbfed48f8034d1ed31109b999fdedf813ebccb73363e6a754f68ac320301",
+    "voice": "en-US-AriaNeural",
+    "bytes": 22176
+  },
+  "story-ball-jian-step-2": {
+    "text": "Wear the matching flower bow.",
+    "textSha256": "c76dc307d077670a9720ddd689e878cb3f8482d3ab3dad19c234f61723768b28",
+    "voice": "en-US-AriaNeural",
+    "bytes": 16272
+  },
+  "story-ball-jian-step-3": {
+    "text": "Add your gem bracelet.",
+    "textSha256": "0310abb7baaf3e7040eb605ff96eea89210c3f17e105919d875bafe24a4a659f",
+    "voice": "en-US-AriaNeural",
+    "bytes": 15552
+  },
+  "story-ball-jian-reason-2": {
+    "text": "Blue and yellow look lovely together.",
+    "textSha256": "4a905f9f90c1f269d5ad50a95c4a3328479f6ac3061ad3f1a8047bee944459da",
+    "voice": "en-US-AriaNeural",
+    "bytes": 19296
+  },
+  "story-ball-friends-intro": {
+    "text": "Different looks, wonderful friends. Everyone can shine.",
+    "textSha256": "4a047651adde09ef7df6014f002ecedf6d91d429fa7d0f3a8dedd162c08a3451",
+    "voice": "en-US-AriaNeural",
+    "bytes": 33840
+  },
+  "story-ball-jian-reason-3": {
+    "text": "A little sparkle finishes your look.",
+    "textSha256": "d816744d998ad79ccc2ed885048d419a67cad7474e87b9a68f11537dbca378be",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18864
+  },
+  "story-ball-friends-end": {
+    "text": "Shine in your own way. Thank you for helping!",
+    "textSha256": "9a89cb952572a67e014f3ace13e5ff35b7e99c837a6863ee18cba3b0a985e546",
+    "voice": "en-US-AriaNeural",
+    "bytes": 27936
+  },
+  "story-ball-friends-step-1": {
+    "text": "Put on your rose dress.",
+    "textSha256": "53534bce6425937ff7178449fa7a26f3a0b3093c48ff9908a540a1719d31ee27",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14832
+  },
+  "story-ball-friends-step-2": {
+    "text": "Wear your ribbon shoes.",
+    "textSha256": "fe4faeb98215717eabfae76707e92b2bd516c39f33e70c3646a6783d285ff31c",
+    "voice": "en-US-AriaNeural",
+    "bytes": 14688
+  },
+  "story-ball-friends-reason-1": {
+    "text": "Choose a look that makes you smile.",
+    "textSha256": "fca8a0d6b112b45f6fa1999689cb4f75f32c09f5ab0b269bdb8ed17d1555312a",
+    "voice": "en-US-AriaNeural",
+    "bytes": 17424
+  },
+  "story-ball-friends-reason-2": {
+    "text": "Your shoes are ready for the runway.",
+    "textSha256": "abe516c63f5dec7becee2cc2e9f0957100fed403942ffbe6f545ed0abab556b9",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18000
+  },
+  "story-ball-friends-reason-3": {
+    "text": "We all belong on this happy stage.",
+    "textSha256": "9fcfff7a9113e0f51202e61304b5ceca9a205c91acd7481340d1312bb00c1761",
+    "voice": "en-US-AriaNeural",
+    "bytes": 19152
+  },
+  "story-ball-friends-step-3": {
+    "text": "Finish with the flower decoration.",
+    "textSha256": "c6eb04e4b7919dfcc94dfd486df70473c6f234d609ca2e8f96296135c2b6b0b2",
+    "voice": "en-US-AriaNeural",
+    "bytes": 18576
+  }
+}

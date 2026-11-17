@@ -98,3 +98,9 @@ v0.5.0 이미지 편집 원본:
 - `art/fashion/mitten-grip.png`: 기존 보랏빛 벙어리장갑과 같은 퍼 커프·금색 식물 문양의 우산 쥔 포즈.
 - 귀걸이 원화는 유지하고 추출 사각형만 실제 좌우 장식 경계로 재측정.
 - 원본 조이 atlas SHA-256: `36de2af50c6f5da6d205ba79edaa3bc54fe6dd14ae9a0636b52c37d43719ef32`.
+
+
+## v0.11.0 영어 음성
+- `audio/story-*.mp3`: 승인된18개이야기의도입·착용지시·이유·결과142개. `scripts/generate-story-voice.py`와edge-tts7.3.1로기존과동일en-US-AriaNeural(rate-8%,pitch+5Hz) 생성.
+- `audio/story-voice-manifest.json`: 실제대사·SHA-256·바이트수·목소리기록. 모든MP3의재생형식과길이검증.
+- 기존32개영어음성은보존해진행중인이전이야기와저장데이터에대응. 모든음성은PWA설치시캐시하며외부TTS를게임실행중호출하지않음.

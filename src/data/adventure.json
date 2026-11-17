@@ -1,44 +1,912 @@
 {
- "stages":[
-  {"name":"왕궁의 아침","intro":"intro","result":"complete","reward":"rose","reason":"왕국의 날씨가 뒤섞였어요! 친구들을 만나러 갈 준비를 해요.","resolved":"왕궁 문이 열렸어요. 장미 드레스를 받고 정원으로 출발해요!","tasks":[{"ids":["dress"],"word":"Dress","voice":"dress"},{"ids":["shoes"],"word":"Shoes","voice":"shoes"},{"ids":["crown"],"word":"Crown","voice":"crown"}]},
-  {"name":"비 오는 정원","intro":"garden-intro","result":"garden-end","reward":"umbrella","reason":"갑자기 내린 비에 토끼가 갇혔어요. 비옷과 장화를 신고 우산을 가져가요.","resolved":"우산으로 토끼를 비에서 구했어요! 정원에 무지개 마법이 돌아왔어요.","tasks":[{"ids":["raincoat"],"word":"Raincoat","voice":"raincoat"},{"ids":["boots"],"word":"Boots","voice":"boots"},{"ids":["umbrella"],"word":"Umbrella","voice":"umbrella"}]},
-  {"name":"눈의 성","intro":"snow-intro","result":"snow-end","reward":"gloves","reason":"겨울이 아닌데 성이 얼었어요! 따뜻한 옷을 입고 얼어붙은 요정에게 온기를 나눠줘요.","resolved":"요정이 다시 날기 시작했어요! 눈꽃 마법을 되찾았어요.","tasks":[{"ids":["winterCoat"],"word":"Coat","voice":"coat"},{"ids":["scarf"],"word":"Scarf","voice":"scarf"},{"ids":["gloves"],"word":"Gloves","voice":"gloves"}]},
-  {"name":"마법의 숲","intro":"forest-intro","result":"forest-end","reward":"explorerHat","reason":"계절이 뒤섞인 숲에서 여우가 길을 잃었어요. 탐험복과 운동화로 숲길을 걸어요.","resolved":"여우가 집으로 돌아갔어요! 반딧불이 길을 밝혀줘요.","tasks":[{"ids":["explorerHat"],"word":"Hat","voice":"hat"},{"ids":["explorer"],"word":"Pants","voice":"pants"},{"ids":["sneakers"],"word":"Sneakers","voice":"sneakers"}]},
-  {"name":"바닷가 축제","intro":"beach-intro","result":"beach-end","reward":"sunglasses","reason":"햇살이 돌아왔어요! 바다거북 친구의 축제를 위해 두 가지 옷을 함께 준비해요.","resolved":"바다 친구들의 축제가 시작됐어요! 이제 왕국의 무도회로 가요.","tasks":[{"ids":["swimsuit","sandals"],"word":"Swimsuit + sandals","voice":"swim-sandals"},{"ids":["sunglasses"],"word":"Sunglasses","voice":"sunglasses"}]},
-  {"name":"왕국의 무도회","intro":"ball-intro","result":"ending","reward":"finalCrown","reason":"친구들과 함께 마지막 별빛을 모아요. 배운 단어를 떠올리며 무도회 의상을 입혀주세요.","resolved":"조이 덕분에 왕국의 계절이 돌아왔어요! 모든 친구가 고마워해요. 특별 왕관을 쓰고 마지막 패션쇼와 포토타임을 즐겨요.","tasks":[{"ids":["starlight"],"word":"Gown","voice":"gown"},{"ids":["pendant"],"word":"Necklace","voice":"necklace"},{"ids":["crown"],"word":"Crown","voice":"ball-crown"}]}
- ],
- "lines":{
- "intro":["Good morning, Joy! The weather is mixed up! Let’s get ready to help our friends.","안녕, 조이! 왕국의 날씨가 뒤섞였어. 친구들을 도우러 갈 준비를 하자!"],
- "dress":["Dress! Find your dress.","드레스를 찾아 조이에게 입혀주세요."],
- "shoes":["Shoes! Put on your shoes.","구두를 찾아 발에 신겨주세요."],
- "crown":["Crown! Put on your crown.","왕관을 머리 위에 씌워주세요."],
- "praise":["Yay! Perfect!","야호! 잘했어요!"],
- "hint":["Let’s try again. Look at the picture!","괜찮아요. 그림을 보고 다시 해봐요!"],
- "complete":["You did it! We are ready to help our friends. Here is your new dress!","준비 완료! 선물로 장미 드레스를 받았어요!"],
- "garden-intro":["Oh! It’s raining! Our rabbit friend needs help. Let’s get ready!","비가 와요! 토끼 친구를 도울 준비를 해요."],
- "raincoat":["Put on your raincoat.","비옷을 입어주세요."],
- "boots":["Put on your boots.","물웅덩이를 지나갈 장화를 신어요."],
- "umbrella":["Take an umbrella.","손에 우산을 들어주세요."],
- "garden-end":["Hooray! The rabbit is dry! You earned an umbrella and boots.","토끼가 비를 피했어요! 우산과 장화를 받았어요."],
- "snow-intro":["Brr! The castle is frozen. Let’s bring warmth to our fairy friend.","성이 꽁꽁 얼었어요. 요정 친구에게 온기를 나눠줘요."],
- "coat":["It’s cold. Put on your coat.","추워요. 따뜻한 외투를 입어요."],
- "scarf":["Keep your neck warm. Wear your scarf.","목이 따뜻하도록 목도리를 둘러요."],
- "gloves":["Keep your hands warm. Put on your gloves.","손이 따뜻하도록 장갑을 껴요."],
- "snow-end":["Wonderful! The fairy can fly again. These winter clothes are yours!","요정이 다시 날아요! 겨울 의상을 받았어요."],
- "forest-intro":["Our fox friend is lost in the forest. Let’s follow the glowing path.","여우가 길을 잃었어요. 빛나는 숲길을 따라가요."],
- "hat":["We are exploring the forest. Find your hat.","숲을 탐험할 모자를 찾아요."],
- "pants":["The path has prickly plants. Wear your pants.","가시풀에서 다리를 보호할 바지를 입어요."],
- "sneakers":["We will walk a long way. Put on your sneakers.","오래 걸을 수 있도록 운동화를 신어요."],
- "forest-end":["You found the way home! The fox says thank you. Keep your explorer outfit!","여우가 집을 찾았어요! 탐험 의상을 받았어요."],
- "beach-intro":["The sunshine is back! Help the sea turtle get ready for the festival.","햇살이 돌아왔어요! 바다거북의 축제를 준비해요."],
- "swim-sandals":["Wear your swimsuit and put on your sandals.","수영복을 입고 샌들도 신겨주세요. 두 가지를 모두 준비해요."],
- "sunglasses":["It’s sunny at the beach. Wear your sunglasses, too.","바닷가 햇살이 눈부셔요. 선글라스도 써요."],
- "beach-end":["The festival is ready! Here are your summer clothes. Let’s go to the royal ball!","축제 준비 완료! 여름 의상을 받고 무도회로 가요."],
- "ball-intro":["Our friends are waiting at the royal ball. Let’s bring back the kingdom’s magic!","친구들이 무도회에서 기다려요. 왕국의 마법을 되찾아요!"],
- "gown":["Choose a beautiful gown for the royal ball.","무도회에 입을 별빛 드레스를 골라요."],
- "necklace":["Add your necklace. It sparkles like the stars!","별처럼 빛나는 목걸이를 더해요."],
- "ball-crown":["Put on your crown. Now we are ready!","왕관을 쓰면 준비 완료예요!"],
- "ending":["You did it, Joy! The seasons are back! All our friends say thank you. This special crown is for you. Let’s celebrate!","조이 덕분에 계절이 돌아왔어요! 특별 왕관을 받고 모두 함께 축하해요!"],
- "both":["Lovely! Now find the other item in the picture.","잘했어요! 그림에 있는 다른 옷도 찾아주세요."]
- }
+  "stages": [
+    {
+      "name": "왕궁의 아침",
+      "intro": "story-palace-door-intro",
+      "result": "story-palace-door-end",
+      "reward": "rose",
+      "reason": "계절의 별이 흩어져 왕궁 문이 잠겼어요. 친구를 도울 여행 준비가 필요해요.",
+      "resolved": "왕궁 문이 열렸어요. 준비한 옷으로 여행을 시작해요.",
+      "tasks": [
+        {
+          "ids": [
+            "dress"
+          ],
+          "word": "Dress",
+          "voice": "story-palace-door-step-1",
+          "reasonVoice": "story-palace-door-reason-1"
+        },
+        {
+          "ids": [
+            "shoes"
+          ],
+          "word": "Shoes",
+          "voice": "story-palace-door-step-2",
+          "reasonVoice": "story-palace-door-reason-2"
+        },
+        {
+          "ids": [
+            "crown"
+          ],
+          "word": "Crown",
+          "voice": "story-palace-door-step-3",
+          "reasonVoice": "story-palace-door-reason-3"
+        }
+      ],
+      "defaultCase": "palace-door"
+    },
+    {
+      "name": "비 오는 정원",
+      "intro": "story-garden-rabbit-intro",
+      "result": "story-garden-rabbit-end",
+      "reward": "umbrella",
+      "reason": "소나기에 토끼가 젖고 있어요. 비옷과 장화, 우산을 준비해 함께 걸어요.",
+      "resolved": "토끼가 우산 아래로 들어오고 정원의 첫 별이 빛나요.",
+      "tasks": [
+        {
+          "ids": [
+            "raincoat"
+          ],
+          "word": "Raincoat",
+          "voice": "story-garden-rabbit-step-1",
+          "reasonVoice": "story-garden-rabbit-reason-1"
+        },
+        {
+          "ids": [
+            "boots"
+          ],
+          "word": "Boots",
+          "voice": "story-garden-rabbit-step-2",
+          "reasonVoice": "story-garden-rabbit-reason-2"
+        },
+        {
+          "ids": [
+            "umbrella"
+          ],
+          "word": "Umbrella",
+          "voice": "story-garden-rabbit-step-3",
+          "reasonVoice": "story-garden-rabbit-reason-3"
+        }
+      ],
+      "defaultCase": "garden-rabbit"
+    },
+    {
+      "name": "눈의 성",
+      "intro": "story-snow-fairy-intro",
+      "result": "story-snow-fairy-end",
+      "reward": "gloves",
+      "reason": "성에 갑자기 눈이 내려 요정의 날개가 차가워졌어요. 따뜻한 준비를 해 온기를 나눠요.",
+      "resolved": "요정이 다시 날고 눈꽃 별을 돌려줘요.",
+      "tasks": [
+        {
+          "ids": [
+            "winterCoat"
+          ],
+          "word": "Coat",
+          "voice": "story-snow-fairy-step-1",
+          "reasonVoice": "story-snow-fairy-reason-1"
+        },
+        {
+          "ids": [
+            "scarf"
+          ],
+          "word": "Scarf",
+          "voice": "story-snow-fairy-step-2",
+          "reasonVoice": "story-snow-fairy-reason-2"
+        },
+        {
+          "ids": [
+            "gloves"
+          ],
+          "word": "Mittens",
+          "voice": "story-snow-fairy-step-3",
+          "reasonVoice": "story-snow-fairy-reason-3"
+        }
+      ],
+      "defaultCase": "snow-fairy"
+    },
+    {
+      "name": "마법의 숲",
+      "intro": "story-forest-fox-intro",
+      "result": "story-forest-fox-end",
+      "reward": "explorerHat",
+      "reason": "숲의 이정표가 뒤섞였어요. 탐험 옷을 입고 친구와 길을 찾아요.",
+      "resolved": "이정표를 되찾고 여우가 집에 돌아가요.",
+      "tasks": [
+        {
+          "ids": [
+            "explorerHat"
+          ],
+          "word": "Hat",
+          "voice": "story-forest-fox-step-1",
+          "reasonVoice": "story-forest-fox-reason-1"
+        },
+        {
+          "ids": [
+            "explorer"
+          ],
+          "word": "Explorer outfit",
+          "voice": "story-forest-fox-step-2",
+          "reasonVoice": "story-forest-fox-reason-2"
+        },
+        {
+          "ids": [
+            "sneakers"
+          ],
+          "word": "Sneakers",
+          "voice": "story-forest-fox-step-3",
+          "reasonVoice": "story-forest-fox-reason-3"
+        }
+      ],
+      "defaultCase": "forest-fox"
+    },
+    {
+      "name": "바닷가 축제",
+      "intro": "story-beach-crab-intro",
+      "result": "story-beach-crab-end",
+      "reward": "sunglasses",
+      "reason": "햇빛이 밝고 모래가 뜨거워요. 해변에 어울리는 옷과 신발을 준비해 게를 만나러 가요.",
+      "resolved": "모래성을 함께 만들고 바다의 별을 찾아요.",
+      "tasks": [
+        {
+          "ids": [
+            "swimsuit"
+          ],
+          "word": "Beach outfit",
+          "voice": "story-beach-crab-step-1",
+          "reasonVoice": "story-beach-crab-reason-1"
+        },
+        {
+          "ids": [
+            "sandals"
+          ],
+          "word": "Sandals",
+          "voice": "story-beach-crab-step-2",
+          "reasonVoice": "story-beach-crab-reason-2"
+        },
+        {
+          "ids": [
+            "sunglasses"
+          ],
+          "word": "Sunglasses",
+          "voice": "story-beach-crab-step-3",
+          "reasonVoice": "story-beach-crab-reason-3"
+        }
+      ],
+      "defaultCase": "beach-crab"
+    },
+    {
+      "name": "왕국의 무도회",
+      "intro": "story-ball-stars-intro",
+      "result": "story-ball-stars-end",
+      "reward": "finalCrown",
+      "reason": "다섯 장소에서 되찾은 별이 모였어요. 친구들이 준비한 무대에 함께 올라요.",
+      "resolved": "정답 점수 대신 도와준 친구들의 감사, 런웨이, 포토타임으로 축하해요.",
+      "tasks": [
+        {
+          "ids": [
+            "starlight"
+          ],
+          "word": "Gown",
+          "voice": "story-ball-stars-step-1",
+          "reasonVoice": "story-ball-stars-reason-1"
+        },
+        {
+          "ids": [
+            "pearls"
+          ],
+          "word": "Pearl necklace",
+          "voice": "story-ball-stars-step-2",
+          "reasonVoice": "story-ball-stars-reason-2"
+        },
+        {
+          "ids": [
+            "finalCrown"
+          ],
+          "word": "Star crown",
+          "voice": "story-ball-stars-step-3",
+          "reasonVoice": "story-ball-stars-reason-3"
+        }
+      ],
+      "defaultCase": "ball-stars"
+    }
+  ],
+  "lines": {
+    "intro": [
+      "Good morning, Joy! The weather is mixed up! Let’s get ready to help our friends.",
+      "안녕, 조이! 왕국의 날씨가 뒤섞였어. 친구들을 도우러 갈 준비를 하자!"
+    ],
+    "dress": [
+      "Dress! Find your dress.",
+      "드레스를 찾아 조이에게 입혀주세요."
+    ],
+    "shoes": [
+      "Shoes! Put on your shoes.",
+      "구두를 찾아 발에 신겨주세요."
+    ],
+    "crown": [
+      "Crown! Put on your crown.",
+      "왕관을 머리 위에 씌워주세요."
+    ],
+    "praise": [
+      "Yay! Perfect!",
+      "야호! 잘했어요!"
+    ],
+    "hint": [
+      "Let’s try again. Look at the picture!",
+      "괜찮아요. 그림을 보고 다시 해봐요!"
+    ],
+    "complete": [
+      "You did it! We are ready to help our friends. Here is your new dress!",
+      "준비 완료! 선물로 장미 드레스를 받았어요!"
+    ],
+    "garden-intro": [
+      "Oh! It’s raining! Our rabbit friend needs help. Let’s get ready!",
+      "비가 와요! 토끼 친구를 도울 준비를 해요."
+    ],
+    "raincoat": [
+      "Put on your raincoat.",
+      "비옷을 입어주세요."
+    ],
+    "boots": [
+      "Put on your boots.",
+      "물웅덩이를 지나갈 장화를 신어요."
+    ],
+    "umbrella": [
+      "Take an umbrella.",
+      "손에 우산을 들어주세요."
+    ],
+    "garden-end": [
+      "Hooray! The rabbit is dry! You earned an umbrella and boots.",
+      "토끼가 비를 피했어요! 우산과 장화를 받았어요."
+    ],
+    "snow-intro": [
+      "Brr! The castle is frozen. Let’s bring warmth to our fairy friend.",
+      "성이 꽁꽁 얼었어요. 요정 친구에게 온기를 나눠줘요."
+    ],
+    "coat": [
+      "It’s cold. Put on your coat.",
+      "추워요. 따뜻한 외투를 입어요."
+    ],
+    "scarf": [
+      "Keep your neck warm. Wear your scarf.",
+      "목이 따뜻하도록 목도리를 둘러요."
+    ],
+    "gloves": [
+      "Keep your hands warm. Put on your gloves.",
+      "손이 따뜻하도록 장갑을 껴요."
+    ],
+    "snow-end": [
+      "Wonderful! The fairy can fly again. These winter clothes are yours!",
+      "요정이 다시 날아요! 겨울 의상을 받았어요."
+    ],
+    "forest-intro": [
+      "Our fox friend is lost in the forest. Let’s follow the glowing path.",
+      "여우가 길을 잃었어요. 빛나는 숲길을 따라가요."
+    ],
+    "hat": [
+      "We are exploring the forest. Find your hat.",
+      "숲을 탐험할 모자를 찾아요."
+    ],
+    "pants": [
+      "The path has prickly plants. Wear your pants.",
+      "가시풀에서 다리를 보호할 바지를 입어요."
+    ],
+    "sneakers": [
+      "We will walk a long way. Put on your sneakers.",
+      "오래 걸을 수 있도록 운동화를 신어요."
+    ],
+    "forest-end": [
+      "You found the way home! The fox says thank you. Keep your explorer outfit!",
+      "여우가 집을 찾았어요! 탐험 의상을 받았어요."
+    ],
+    "beach-intro": [
+      "The sunshine is back! Help the sea turtle get ready for the festival.",
+      "햇살이 돌아왔어요! 바다거북의 축제를 준비해요."
+    ],
+    "swim-sandals": [
+      "Wear your swimsuit and put on your sandals.",
+      "수영복을 입고 샌들도 신겨주세요. 두 가지를 모두 준비해요."
+    ],
+    "sunglasses": [
+      "It’s sunny at the beach. Wear your sunglasses, too.",
+      "바닷가 햇살이 눈부셔요. 선글라스도 써요."
+    ],
+    "beach-end": [
+      "The festival is ready! Here are your summer clothes. Let’s go to the royal ball!",
+      "축제 준비 완료! 여름 의상을 받고 무도회로 가요."
+    ],
+    "ball-intro": [
+      "Our friends are waiting at the royal ball. Let’s bring back the kingdom’s magic!",
+      "친구들이 무도회에서 기다려요. 왕국의 마법을 되찾아요!"
+    ],
+    "gown": [
+      "Choose a beautiful gown for the royal ball.",
+      "무도회에 입을 별빛 드레스를 골라요."
+    ],
+    "necklace": [
+      "Add your necklace. It sparkles like the stars!",
+      "별처럼 빛나는 목걸이를 더해요."
+    ],
+    "ball-crown": [
+      "Put on your crown. Now we are ready!",
+      "왕관을 쓰면 준비 완료예요!"
+    ],
+    "ending": [
+      "You did it, Joy! The seasons are back! All our friends say thank you. This special crown is for you. Let’s celebrate!",
+      "조이 덕분에 계절이 돌아왔어요! 특별 왕관을 받고 모두 함께 축하해요!"
+    ],
+    "both": [
+      "Lovely! Now find the other item in the picture.",
+      "잘했어요! 그림에 있는 다른 옷도 찾아주세요."
+    ],
+    "story-palace-door-intro": [
+      "Good morning! Our friends need help. Let’s get ready.",
+      "좋은 아침이에요! 친구들이 도움이 필요해요. 함께 준비해요."
+    ],
+    "story-palace-door-end": [
+      "The door is open! Let’s find our friends.",
+      "왕궁 문이 열렸어요. 준비한 옷으로 여행을 시작해요."
+    ],
+    "story-palace-door-step-1": [
+      "Put on your royal dress.",
+      "왕실 드레스를 입어요."
+    ],
+    "story-palace-door-reason-1": [
+      "Your dress is ready for an adventure.",
+      "드레스를 입고 모험에 나설 준비가 됐어요."
+    ],
+    "story-palace-door-step-2": [
+      "Put on your shoes.",
+      "구두를 신어요."
+    ],
+    "story-palace-door-reason-2": [
+      "Your shoes protect your feet.",
+      "구두가 발을 보호해줘요."
+    ],
+    "story-palace-door-step-3": [
+      "Add your little crown.",
+      "작은 왕관을 써요."
+    ],
+    "story-palace-door-reason-3": [
+      "You are ready to help the kingdom.",
+      "왕국을 도우러 갈 준비가 됐어요."
+    ],
+    "story-palace-picnic-intro": [
+      "A letter is hiding in the garden. Let’s look for it.",
+      "정원에 편지가 숨어 있어요. 함께 찾아봐요."
+    ],
+    "story-palace-picnic-end": [
+      "Here is the letter! The picnic can begin.",
+      "옷을 준비해 정원에 나서자 토끼가 초대장을 찾아요."
+    ],
+    "story-palace-picnic-step-1": [
+      "Choose your daisy dress.",
+      "데이지 드레스를 골라요."
+    ],
+    "story-palace-picnic-reason-1": [
+      "Flowers make our picnic bright.",
+      "꽃이 소풍을 환하게 밝혀줘요."
+    ],
+    "story-palace-picnic-step-2": [
+      "Put on your ribbon shoes.",
+      "리본 구두를 신어요."
+    ],
+    "story-palace-picnic-reason-2": [
+      "We can walk along the garden path.",
+      "정원 길을 걸어갈 수 있어요."
+    ],
+    "story-palace-picnic-step-3": [
+      "Wear your purple bow.",
+      "보라색 리본을 달아요."
+    ],
+    "story-palace-picnic-reason-3": [
+      "Your bow matches the flowers.",
+      "리본과 꽃이 잘 어울려요."
+    ],
+    "story-palace-jian-intro": [
+      "Jian made a sunny dress for you. Let’s try it on.",
+      "지안이 햇살 같은 드레스를 만들었어요. 입어볼까요?"
+    ],
+    "story-palace-jian-end": [
+      "You made it, Jian! Let’s take a picture.",
+      "“지안이가 디자인했어요” 크레딧과 함께 창작을 축하하는 포토타임으로 마무리해요."
+    ],
+    "story-palace-jian-step-1": [
+      "Put on Jian’s flower dress.",
+      "지안의 꽃 드레스를 입어요."
+    ],
+    "story-palace-jian-reason-1": [
+      "Look at the yellow flowers!",
+      "노란 꽃을 보세요!"
+    ],
+    "story-palace-jian-step-2": [
+      "Put on your flower boots.",
+      "꽃 장화를 신어요."
+    ],
+    "story-palace-jian-reason-2": [
+      "Your boots match your dress.",
+      "장화와 드레스가 잘 어울려요."
+    ],
+    "story-palace-jian-step-3": [
+      "Add the blue flower bow.",
+      "파란 꽃 리본을 달아요."
+    ],
+    "story-palace-jian-reason-3": [
+      "Thank you for your lovely design, Jian!",
+      "멋진 디자인을 선물해줘서 고마워요, 지안!"
+    ],
+    "story-garden-rabbit-intro": [
+      "It's raining. The little rabbit is wet.",
+      "비가 와요. 작은 토끼가 비에 젖었어요."
+    ],
+    "story-garden-rabbit-end": [
+      "Come under the umbrella, little rabbit!",
+      "토끼가 우산 아래로 들어오고 정원의 첫 별이 빛나요."
+    ],
+    "story-garden-rabbit-step-1": [
+      "Put on your yellow raincoat.",
+      "노란 우비를 입어요."
+    ],
+    "story-garden-rabbit-reason-1": [
+      "It helps you stay dry.",
+      "비옷이 몸을 젖지 않게 해줘요."
+    ],
+    "story-garden-rabbit-step-2": [
+      "Put on your boots.",
+      "장화를 신어요."
+    ],
+    "story-garden-rabbit-reason-2": [
+      "Your boots keep your feet dry.",
+      "장화가 발을 젖지 않게 해줘요."
+    ],
+    "story-garden-rabbit-step-3": [
+      "Hold your umbrella.",
+      "우산을 들어요."
+    ],
+    "story-garden-rabbit-reason-3": [
+      "We can share our umbrella.",
+      "우산을 친구와 나눠 쓸 수 있어요."
+    ],
+    "story-garden-puddle-intro": [
+      "There is a big puddle. The letter must stay dry.",
+      "커다란 물웅덩이가 있어요. 편지를 젖지 않게 해야 해요."
+    ],
+    "story-garden-puddle-end": [
+      "The letter is dry. Thank you for helping!",
+      "편지를 무사히 전해 주고 무지개가 떠요."
+    ],
+    "story-garden-puddle-step-1": [
+      "Wear your raincoat, please.",
+      "우비를 입어주세요."
+    ],
+    "story-garden-puddle-reason-1": [
+      "Rain slides off the coat.",
+      "비가 비옷을 타고 흘러내려요."
+    ],
+    "story-garden-puddle-step-2": [
+      "Boots on! Now your feet are ready.",
+      "장화를 신으면 발도 준비 끝이에요."
+    ],
+    "story-garden-puddle-reason-2": [
+      "Boots help us walk through the rain.",
+      "장화를 신고 빗속을 걸어갈 수 있어요."
+    ],
+    "story-garden-puddle-step-3": [
+      "Take your umbrella with you.",
+      "우산을 챙겨요."
+    ],
+    "story-garden-puddle-reason-3": [
+      "The letter can stay dry, too.",
+      "편지도 비에 젖지 않게 해줘요."
+    ],
+    "story-garden-seedling-intro": [
+      "The small plant needs a little shelter. Let’s help.",
+      "작은 새싹에게 비를 피할 곳이 필요해요. 함께 도와줘요."
+    ],
+    "story-garden-seedling-end": [
+      "The little plant is standing tall again!",
+      "새싹이 다시 고개를 들고 고슴도치가 고마워해요."
+    ],
+    "story-garden-seedling-step-1": [
+      "Put your boots on first.",
+      "먼저 장화를 신어요."
+    ],
+    "story-garden-seedling-reason-1": [
+      "The ground is wet today.",
+      "오늘 땅이 젖어 있어요."
+    ],
+    "story-garden-seedling-step-2": [
+      "Now put on your raincoat.",
+      "이제 우비를 입어요."
+    ],
+    "story-garden-seedling-reason-2": [
+      "You can help while staying dry.",
+      "몸을 젖지 않게 하고 친구를 도울 수 있어요."
+    ],
+    "story-garden-seedling-step-3": [
+      "Open your umbrella.",
+      "우산을 펼쳐요."
+    ],
+    "story-garden-seedling-reason-3": [
+      "A little shelter makes a big difference.",
+      "작은 비가림도 큰 도움이 돼요."
+    ],
+    "story-snow-fairy-intro": [
+      "Brr! It's cold. The fairy needs a warm friend.",
+      "으, 추워요! 요정에게 따뜻한 친구가 필요해요."
+    ],
+    "story-snow-fairy-end": [
+      "Warm hands, warm hearts! The fairy can fly.",
+      "요정이 다시 날고 눈꽃 별을 돌려줘요."
+    ],
+    "story-snow-fairy-step-1": [
+      "Put on your warm coat.",
+      "따뜻한 코트를 입어요."
+    ],
+    "story-snow-fairy-reason-1": [
+      "Your coat keeps your body warm.",
+      "코트가 몸을 따뜻하게 해줘요."
+    ],
+    "story-snow-fairy-step-2": [
+      "Wrap your scarf around your neck.",
+      "목에 목도리를 둘러요."
+    ],
+    "story-snow-fairy-reason-2": [
+      "A scarf feels soft and warm.",
+      "목도리는 부드럽고 따뜻해요."
+    ],
+    "story-snow-fairy-step-3": [
+      "Put on your mittens.",
+      "벙어리장갑을 껴요."
+    ],
+    "story-snow-fairy-reason-3": [
+      "Your hands are warm now.",
+      "이제 손도 따뜻해졌어요."
+    ],
+    "story-snow-lantern-intro": [
+      "The lantern is dark. Let’s bring back its warm light.",
+      "등불이 꺼졌어요. 따뜻한 빛을 되찾아줘요."
+    ],
+    "story-snow-lantern-end": [
+      "Look! The lantern is glowing again.",
+      "등불이 켜져 성의 친구들이 길을 찾을 수 있어요."
+    ],
+    "story-snow-lantern-step-1": [
+      "Choose your winter coat.",
+      "겨울 코트를 골라요."
+    ],
+    "story-snow-lantern-reason-1": [
+      "A warm coat is good for a snowy day.",
+      "눈 오는 날에는 따뜻한 코트가 좋아요."
+    ],
+    "story-snow-lantern-step-2": [
+      "Mittens on, please.",
+      "벙어리장갑을 껴주세요."
+    ],
+    "story-snow-lantern-reason-2": [
+      "They keep your fingers together and warm.",
+      "벙어리장갑이 손가락을 함께 감싸 따뜻하게 해줘요."
+    ],
+    "story-snow-lantern-step-3": [
+      "Finish with your red scarf.",
+      "빨간 목도리로 마무리해요."
+    ],
+    "story-snow-lantern-reason-3": [
+      "Now we are ready for the snow.",
+      "이제 눈 속으로 나갈 준비가 됐어요."
+    ],
+    "story-snow-parade-intro": [
+      "The parade has stopped. Our friends feel cold.",
+      "퍼레이드가 멈췄어요. 친구들이 추워하고 있어요."
+    ],
+    "story-snow-parade-end": [
+      "Wave hello! The happy parade is moving.",
+      "따뜻하게 준비한 주인공의 응원으로 퍼레이드가 다시 시작돼요."
+    ],
+    "story-snow-parade-step-1": [
+      "Wear your cozy scarf.",
+      "포근한 목도리를 둘러요."
+    ],
+    "story-snow-parade-reason-1": [
+      "It wraps softly around your neck.",
+      "목도리가 목을 부드럽게 감싸줘요."
+    ],
+    "story-snow-parade-step-2": [
+      "Put your coat on, too.",
+      "코트도 입어요."
+    ],
+    "story-snow-parade-reason-2": [
+      "We dress warmly before we go.",
+      "나가기 전에 따뜻하게 입어요."
+    ],
+    "story-snow-parade-step-3": [
+      "Keep your hands warm with mittens.",
+      "벙어리장갑으로 손을 따뜻하게 해요."
+    ],
+    "story-snow-parade-reason-3": [
+      "Now we can wave to our friends.",
+      "이제 친구들에게 손을 흔들 수 있어요."
+    ],
+    "story-forest-fox-intro": [
+      "The fox is lost. Let’s follow the forest path.",
+      "여우가 길을 잃었어요. 숲길을 함께 따라가요."
+    ],
+    "story-forest-fox-end": [
+      "This is the way home. Thank you, explorer!",
+      "이정표를 되찾고 여우가 집에 돌아가요."
+    ],
+    "story-forest-fox-step-1": [
+      "Put on your explorer hat.",
+      "탐험 모자를 써요."
+    ],
+    "story-forest-fox-reason-1": [
+      "Your hat is ready for the journey.",
+      "여행할 모자를 준비했어요."
+    ],
+    "story-forest-fox-step-2": [
+      "Wear your explorer outfit.",
+      "탐험복을 입어요."
+    ],
+    "story-forest-fox-reason-2": [
+      "We can move along the forest path.",
+      "탐험복을 입고 숲길을 걸어요."
+    ],
+    "story-forest-fox-step-3": [
+      "Put on your sneakers.",
+      "운동화를 신어요."
+    ],
+    "story-forest-fox-reason-3": [
+      "Comfortable shoes help us walk.",
+      "편안한 신발을 신고 걸어요."
+    ],
+    "story-forest-bridge-intro": [
+      "A little bridge is ahead. Let’s get ready to walk.",
+      "앞에 작은 다리가 있어요. 걸어갈 준비를 해요."
+    ],
+    "story-forest-bridge-end": [
+      "We made it together. What a lovely view!",
+      "친구와 함께 다리를 건너 숲의 별을 발견해요."
+    ],
+    "story-forest-bridge-step-1": [
+      "Choose your walking shoes.",
+      "걷기 편한 운동화를 골라요."
+    ],
+    "story-forest-bridge-reason-1": [
+      "Sneakers feel comfortable.",
+      "운동화는 발이 편안해요."
+    ],
+    "story-forest-bridge-step-2": [
+      "Wear your hat.",
+      "모자를 써요."
+    ],
+    "story-forest-bridge-reason-2": [
+      "We are going on a forest adventure.",
+      "우리는 숲으로 모험을 떠나요."
+    ],
+    "story-forest-bridge-step-3": [
+      "Put on your explorer outfit.",
+      "탐험복을 입어요."
+    ],
+    "story-forest-bridge-reason-3": [
+      "Ready? Let’s walk together, slowly.",
+      "준비됐나요? 함께 천천히 걸어요."
+    ],
+    "story-forest-birds-intro": [
+      "Can you hear a little bird? Let’s find our friend.",
+      "작은 새의 노래가 들리나요? 친구를 함께 찾아봐요."
+    ],
+    "story-forest-birds-end": [
+      "Tweet, tweet! The forest has its song again.",
+      "새가 노래를 되찾고 친구들이 함께 따라 불러요."
+    ],
+    "story-forest-birds-step-1": [
+      "Get dressed for our adventure.",
+      "탐험할 옷으로 갈아입어요."
+    ],
+    "story-forest-birds-reason-1": [
+      "Our outfit is ready for the forest.",
+      "숲으로 갈 옷을 준비했어요."
+    ],
+    "story-forest-birds-step-2": [
+      "Put your sneakers on.",
+      "운동화를 신어요."
+    ],
+    "story-forest-birds-reason-2": [
+      "Soft steps help us listen.",
+      "사뿐히 걸으며 소리에 귀 기울여요."
+    ],
+    "story-forest-birds-step-3": [
+      "Add your explorer hat.",
+      "탐험 모자를 써요."
+    ],
+    "story-forest-birds-reason-3": [
+      "We are ready to look and listen.",
+      "이제 살펴보고 귀 기울일 준비가 됐어요."
+    ],
+    "story-beach-crab-intro": [
+      "The sun is bright. The crab needs our help.",
+      "햇살이 눈부셔요. 게 친구에게 도움이 필요해요."
+    ],
+    "story-beach-crab-end": [
+      "The crab is smiling. Let’s build a sandcastle!",
+      "모래성을 함께 만들고 바다의 별을 찾아요."
+    ],
+    "story-beach-crab-step-1": [
+      "Put on your beach outfit.",
+      "해변 옷을 입어요."
+    ],
+    "story-beach-crab-reason-1": [
+      "Light clothes feel comfortable.",
+      "가벼운 옷을 입으면 편안해요."
+    ],
+    "story-beach-crab-step-2": [
+      "Put on your sandals.",
+      "샌들을 신어요."
+    ],
+    "story-beach-crab-reason-2": [
+      "Your feet are ready for the beach.",
+      "발도 해변으로 갈 준비가 됐어요."
+    ],
+    "story-beach-crab-step-3": [
+      "Wear your sunglasses.",
+      "선글라스를 써요."
+    ],
+    "story-beach-crab-reason-3": [
+      "They help in the bright sunshine.",
+      "눈부신 햇살을 가려줘요."
+    ],
+    "story-beach-shell-intro": [
+      "The shells are shining. Let’s help the turtle.",
+      "조개가 반짝이고 있어요. 거북이를 도와줘요."
+    ],
+    "story-beach-shell-end": [
+      "One shell, two shells! The turtle is home.",
+      "조개를 전해 주며 수를 세는 짧은 선택 대사를 즐겨요. 수 세기는 통과 조건이 아니에요."
+    ],
+    "story-beach-shell-step-1": [
+      "Sandals on, please.",
+      "샌들을 신어주세요."
+    ],
+    "story-beach-shell-reason-1": [
+      "We wear shoes on the hot sand.",
+      "뜨거운 모래 위에서는 신발을 신어요."
+    ],
+    "story-beach-shell-step-2": [
+      "Put your sunglasses on.",
+      "선글라스를 써요."
+    ],
+    "story-beach-shell-reason-2": [
+      "Now the bright light feels softer.",
+      "밝은 햇살이 조금 부드러워졌어요."
+    ],
+    "story-beach-shell-step-3": [
+      "Choose your beach outfit.",
+      "해변 옷을 골라요."
+    ],
+    "story-beach-shell-reason-3": [
+      "We are dressed for a sunny day.",
+      "햇살 좋은 날에 맞게 입었어요."
+    ],
+    "story-beach-pair-intro": [
+      "An invitation is here! Let’s get ready for the sea festival.",
+      "초대장이 도착했어요! 바다 축제에 갈 준비를 해요."
+    ],
+    "story-beach-pair-end": [
+      "Both are on! Let’s go to the festival.",
+      "복합 지시는 두 아이템이 모두 착용되어야 통과하며, 한 개만 입었을 때 남은 아이템을 명확히 알려줘요."
+    ],
+    "story-beach-pair-step-1": [
+      "Put on your beach outfit and sandals.",
+      "해변 옷과 샌들을 준비해요."
+    ],
+    "story-beach-pair-reason-1": [
+      "Two things help us get ready. Take your time.",
+      "두 가지를 준비해요. 천천히 해도 괜찮아요."
+    ],
+    "story-beach-pair-step-2": [
+      "Add your sunglasses.",
+      "선글라스도 써요."
+    ],
+    "story-beach-pair-reason-2": [
+      "Now your sunny look is ready.",
+      "이제 햇살에 어울리는 옷차림이 완성됐어요."
+    ],
+    "story-ball-stars-intro": [
+      "All our friends are here. Let’s celebrate together!",
+      "친구들이 모두 모였어요. 함께 축하해요!"
+    ],
+    "story-ball-stars-end": [
+      "You did it! Let’s walk, wave, and take a picture.",
+      "정답 점수 대신 도와준 친구들의 감사, 런웨이, 포토타임으로 축하해요."
+    ],
+    "story-ball-stars-step-1": [
+      "Put on your starlight dress.",
+      "별빛 드레스를 입어요."
+    ],
+    "story-ball-stars-reason-1": [
+      "The stars sparkle on your dress.",
+      "드레스의 별들이 반짝이고 있어요."
+    ],
+    "story-ball-stars-step-2": [
+      "Wear your pearl necklace.",
+      "진주 목걸이를 걸어요."
+    ],
+    "story-ball-stars-reason-2": [
+      "The pearls shine softly.",
+      "진주가 은은하게 빛나요."
+    ],
+    "story-ball-stars-step-3": [
+      "Add the little star crown.",
+      "작은 별 왕관을 써요."
+    ],
+    "story-ball-stars-reason-3": [
+      "You helped our kingdom shine again.",
+      "덕분에 왕국이 다시 빛나게 됐어요."
+    ],
+    "story-ball-jian-intro": [
+      "Jian's design is on the runway today. Let’s make it shine.",
+      "오늘은 지안의 디자인이 무대에 올라요. 함께 빛내줘요."
+    ],
+    "story-ball-jian-end": [
+      "Designed by Jian. Worn with joy!",
+      "저장 사진과 무대에 지안의 디자인 크레딧을 유지하고 자유 꾸미기를 열어요."
+    ],
+    "story-ball-jian-step-1": [
+      "Choose Jian’s sunny dress.",
+      "지안의 햇살 드레스를 골라요."
+    ],
+    "story-ball-jian-reason-1": [
+      "A young designer made these lovely flowers.",
+      "어린 디자이너가 이 예쁜 꽃을 만들었어요."
+    ],
+    "story-ball-jian-step-2": [
+      "Wear the matching flower bow.",
+      "어울리는 꽃 리본을 달아요."
+    ],
+    "story-ball-jian-reason-2": [
+      "Blue and yellow look lovely together.",
+      "파란색과 노란색이 잘 어울려요."
+    ],
+    "story-ball-jian-step-3": [
+      "Add your gem bracelet.",
+      "보석 팔찌를 더해요."
+    ],
+    "story-ball-jian-reason-3": [
+      "A little sparkle finishes your look.",
+      "작은 반짝임으로 옷차림을 마무리해요."
+    ],
+    "story-ball-friends-intro": [
+      "Different looks, wonderful friends. Everyone can shine.",
+      "서로 다른 모습의 멋진 친구들! 모두 빛날 수 있어요."
+    ],
+    "story-ball-friends-end": [
+      "Shine in your own way. Thank you for helping!",
+      "캐릭터를 바꿔도 같은 학습 기회와 보상을 주고, 이후 자유 무대에서는 모든 착장을 허용해요."
+    ],
+    "story-ball-friends-step-1": [
+      "Put on your rose dress.",
+      "장미 드레스를 입어요."
+    ],
+    "story-ball-friends-reason-1": [
+      "Choose a look that makes you smile.",
+      "입고 웃음이 나는 옷을 골라요."
+    ],
+    "story-ball-friends-step-2": [
+      "Wear your ribbon shoes.",
+      "리본 구두를 신어요."
+    ],
+    "story-ball-friends-reason-2": [
+      "Your shoes are ready for the runway.",
+      "신발도 런웨이에 설 준비가 됐어요."
+    ],
+    "story-ball-friends-step-3": [
+      "Finish with the flower decoration.",
+      "꽃 머리 장식으로 마무리해요."
+    ],
+    "story-ball-friends-reason-3": [
+      "We all belong on this happy stage.",
+      "모두 이 행복한 무대의 주인공이에요."
+    ]
+  }
 }
