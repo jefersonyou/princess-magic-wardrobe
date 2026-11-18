@@ -6,7 +6,7 @@ import {body} from './phase0/rig';
 function make(){const c=document.createElement('canvas');c.width=560;c.height=880;const ctx=c.getContext('2d')!;ctx.scale(2,2);return {c,ctx}}
 export function prepareFashion(scene:Phaser.Scene){
  const ears=scene.textures.get('fashionEars').getSourceImage() as HTMLImageElement;
- for(let i=0;i<20;i++){const {c,ctx}=make();for(let side=0;side<2;side++){const f=frames.earrings.halves[i][side];const h=i===3?14:11,w=Math.min(9,h*f[2]/f[3]);ctx.drawImage(ears,f[0],f[1],f[2],f[3],(side===0?110:174)-w/2,81,w,h)}scene.textures.addCanvas('worn-earring'+i,c)}
+ for(let i=0;i<20;i++){const {c,ctx}=make();for(let side=0;side<2;side++){const f=frames.earrings.halves[i][side];const h=i===3?11:8.5,w=Math.min(6.5,h*f[2]/f[3]);ctx.drawImage(ears,f[0],f[1],f[2],f[3],(side===0?114:166)-w/2,79.5,w,h)}scene.textures.addCanvas('worn-earring'+i,c)}
  const eyes=scene.textures.get('fashionEyes').getSourceImage() as HTMLImageElement;
  for(let i=0;i<10;i++){const {c,ctx}=make(),f=frames.sunglasses.frames[i];const w=[58,57,60,57,59,58,60,56,57,58][i],h=w*f[3]/f[2];ctx.drawImage(eyes,f[0],f[1],f[2],f[3],140-w/2,70-h*.63,w,h);scene.textures.addCanvas('worn-sunglass'+i,c)}
  // The original beach sunglasses use the same detailed round frame and face fit.
@@ -64,4 +64,18 @@ export function applyGloveFit(scene:Phaser.Scene,id:string,outfit:string|undefin
  else if(outfit)layers.get(outfit)!.setTexture(fit.maskedKey);
  else bodyImage.setTexture(fit.maskedKey).setPosition(0,0).setDisplaySize(280,440);
  if(fit.heldKey)layers.get('umbrella')!.setTexture(fit.heldKey);
+}
+
+// The friends share a body, but their earlobes are at different head landmarks.
+export function earringTexture(scene:Phaser.Scene,id:string,character='joy'){
+ const positions:Record<string,readonly[number,number,number]>={joy:[114,166,79.5],luna:[110,174,81],ruby:[111,173,81],aria:[111,173,81]};
+ if(character==='joy')return 'worn-'+id;
+ const key='ear-fit-'+character+'-'+id;
+ if(!scene.textures.exists(key)){
+  const [left,right,y]=positions[character]||positions.joy,source=scene.textures.get('worn-'+id).getSourceImage() as HTMLCanvasElement,{c,ctx}=make();
+  ctx.drawImage(source,0,0,280,880,left-114,y-79.5,140,440);
+  ctx.drawImage(source,280,0,280,880,140+right-166,y-79.5,140,440);
+  scene.textures.addCanvas(key,c);
+ }
+ return key;
 }

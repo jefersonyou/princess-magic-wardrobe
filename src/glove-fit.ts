@@ -35,7 +35,7 @@ export function gloveLandmark(image:HTMLImageElement,frame:readonly number[]){
 }
 export function drawFittedGlove(ctx:CanvasRenderingContext2D,image:HTMLImageElement,frame:readonly number[],wrist:Wrist,custom?:ReturnType<typeof gloveLandmark>){
  const [x,y,w,h]=frame,landmark=custom??gloveLandmark(image,frame),angle=Math.atan2(-wrist.dx,wrist.dy);
- ctx.save();ctx.translate(wrist.x,wrist.y);ctx.rotate(angle);ctx.scale(wrist.width*1.08/landmark.cuff.width,wrist.length*.94/landmark.length);ctx.rotate(-landmark.angle);ctx.drawImage(image,x,y,w,h,-landmark.cuff.x,-landmark.cuff.y,w,h);ctx.restore();
+ ctx.save();ctx.translate(wrist.x,wrist.y);ctx.rotate(angle);ctx.scale(wrist.width*1.08/landmark.cuff.width,wrist.length*1.05/landmark.length);ctx.rotate(-landmark.angle);ctx.drawImage(image,x,y,w,h,-landmark.cuff.x,-landmark.cuff.y,w,h);ctx.restore();
 }
 // Remove only the exposed resting arm, not a triangle of the dress beside it.
 export function removeRestingArm(ctx:CanvasRenderingContext2D){
