@@ -104,3 +104,8 @@ v0.5.0 이미지 편집 원본:
 - `audio/story-*.mp3`: 승인된18개이야기의도입·착용지시·이유·결과142개. `scripts/generate-story-voice.py`와edge-tts7.3.1로기존과동일en-US-AriaNeural(rate-8%,pitch+5Hz) 생성.
 - `audio/story-voice-manifest.json`: 실제대사·SHA-256·바이트수·목소리기록. 모든MP3의재생형식과길이검증.
 - 기존32개영어음성은보존해진행중인이전이야기와저장데이터에대응. 모든음성은PWA설치시캐시하며외부TTS를게임실행중호출하지않음.
+
+## v0.11.2 나눔고딕
+Google Fonts의 Nanum Gothic Regular/Bold 원본 TTF를 글리프 변경 없이 WOFF로 변환해 `src/fonts/`에 포함했습니다. 전체 한글·영문 글리프를 유지하며 외부 폰트 서버에 의존하지 않습니다.
+원본: https://github.com/google/fonts/tree/main/ofl/nanumgothic
+라이선스: SIL Open Font License 1.1, `public/fonts/OFL-NanumGothic.txt`.
