@@ -1,3 +1,4 @@
+import {bodyCenterX} from './anatomy';
 import {canonicalFrame} from './proportions';
 import Phaser from 'phaser';
 export class WalkRig {
@@ -12,5 +13,5 @@ export class WalkRig {
  // Independent hip and knee transforms; both shoes remain in their lower-leg pieces.
  for(let side=0;side<2;side++){const hip=side?162:116,knee=side?164:115;const stride=Math.sin(phase+(side?Math.PI:0))*amplitude;ctx.save();ctx.translate(hip,315);ctx.rotate(stride*.055);ctx.translate(-hip,-315);ctx.save();ctx.beginPath();ctx.rect(side?141:98,313,42,48);ctx.clip();ctx.drawImage(this.original,0,0,280,440);ctx.restore();ctx.translate(knee,357);ctx.rotate(Math.max(0,-stride)*.11*(side?-1:1));ctx.translate(-knee,-357);ctx.translate(0,-Math.max(0,-stride)*4);ctx.save();ctx.beginPath();ctx.rect(side?140:96,355,45,85);ctx.clip();ctx.drawImage(this.original,0,0,280,440);ctx.restore();ctx.restore()}
 
- ctx.drawImage(this.torso,0,0,280,440);ctx.restore();this.texture.refresh();const progress=Math.min(t/4.8,1),scale=.76+.24*progress;this.image.setDisplaySize(280*scale,440*scale).setPosition(140*(1-scale),Number(document.querySelector<HTMLElement>('#character')!.dataset.canonicalFoot||417)*(1-scale));document.querySelector<HTMLElement>('#character')!.dataset.walkPhase=sway.toFixed(3)}
+ ctx.drawImage(this.torso,0,0,280,440);ctx.restore();this.texture.refresh();const progress=Math.min(t/4.8,1),scale=.76+.24*progress;this.image.setDisplaySize(280*scale,440*scale).setPosition(bodyCenterX*(1-scale),Number(document.querySelector<HTMLElement>('#character')!.dataset.canonicalFoot||417)*(1-scale));document.querySelector<HTMLElement>('#character')!.dataset.walkPhase=sway.toFixed(3)}
 }

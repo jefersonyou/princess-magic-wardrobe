@@ -1,3 +1,4 @@
+import {bodyCenterX} from './anatomy';
 import {earlobes} from './character-fit';
 import {mittenGrip} from './mitten-grip';
 import type Phaser from 'phaser';
@@ -9,9 +10,9 @@ export function prepareFashion(scene:Phaser.Scene){
  const ears=scene.textures.get('fashionEars').getSourceImage() as HTMLImageElement;
  for(let i=0;i<20;i++){const {c,ctx}=make();for(let side=0;side<2;side++){const f=frames.earrings.halves[i][side];const h=i===3?11:8.5,w=Math.min(6.5,h*f[2]/f[3]);ctx.drawImage(ears,f[0],f[1],f[2],f[3],(side===0?114:166)-w/2,79.5,w,h)}scene.textures.addCanvas('worn-earring'+i,c)}
  const eyes=scene.textures.get('fashionEyes').getSourceImage() as HTMLImageElement;
- for(let i=0;i<10;i++){const {c,ctx}=make(),f=frames.sunglasses.frames[i];const w=[58,57,60,57,59,58,60,56,57,58][i],h=w*f[3]/f[2];ctx.drawImage(eyes,f[0],f[1],f[2],f[3],140-w/2,70-h*.63,w,h);scene.textures.addCanvas('worn-sunglass'+i,c)}
+ for(let i=0;i<10;i++){const {c,ctx}=make(),f=frames.sunglasses.frames[i];const w=[58,57,60,57,59,58,60,56,57,58][i],h=w*f[3]/f[2];ctx.drawImage(eyes,f[0],f[1],f[2],f[3],bodyCenterX-w/2,70-h*.63,w,h);scene.textures.addCanvas('worn-sunglass'+i,c)}
  // The original beach sunglasses use the same detailed round frame and face fit.
- {const {c,ctx}=make();const f=frames.sunglasses.frames[3],w=57,h=w*f[3]/f[2];ctx.drawImage(eyes,f[0],f[1],f[2],f[3],140-w/2,70-h*.63,w,h);scene.textures.addCanvas('worn-sunglasses',c)}
+ {const {c,ctx}=make();const f=frames.sunglasses.frames[3],w=57,h=w*f[3]/f[2];ctx.drawImage(eyes,f[0],f[1],f[2],f[3],bodyCenterX-w/2,70-h*.63,w,h);scene.textures.addCanvas('worn-sunglasses',c)}
  // Preview and actual wear use the same wrist-based fitting.
  for(const id of ['gloves',...Array.from({length:10},(_,i)=>'fashionGloves'+i)])prepareGloveFit(scene,id,'rose',false);
 }

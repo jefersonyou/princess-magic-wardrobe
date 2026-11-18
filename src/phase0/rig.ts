@@ -1,3 +1,4 @@
+import {explorerHatArt} from '../hat-art';
 import {fashionAtlases,fashionFrames} from '../fashion';
 import frames from './collection-frames';
 export type Point=readonly[number,number];
@@ -71,4 +72,4 @@ for(const [id,name,english,slot,frame] of [
 ] as const)garments[id]={...item(name,english,slot,'jian',frame,[0,0],[280,440]),designer:'지안'};
 export type GarmentId=keyof typeof garments;
 export const ids=Object.keys(garments) as GarmentId[];
-export function thumbnail(id:GarmentId){const g=garments[id],a=atlases[g.atlas],[x,y,w,h]=g.frame;return `<svg viewBox="0 0 ${w} ${h}"><defs><clipPath id="crop-${id}"><rect width="${w}" height="${h}"/></clipPath></defs><image clip-path="url(#crop-${id})" href="${a.url}" x="${-x}" y="${-y}" width="${a.width}" height="${a.height}"/></svg>`}
+export function thumbnail(id:GarmentId){if(id==='explorerHat')return `<svg viewBox="0 0 1942 809"><image href="${explorerHatArt}" width="1942" height="809"/></svg>`;const g=garments[id],a=atlases[g.atlas],[x,y,w,h]=g.frame;return `<svg viewBox="0 0 ${w} ${h}"><defs><clipPath id="crop-${id}"><rect width="${w}" height="${h}"/></clipPath></defs><image clip-path="url(#crop-${id})" href="${a.url}" x="${-x}" y="${-y}" width="${a.width}" height="${a.height}"/></svg>`}

@@ -109,3 +109,6 @@ v0.5.0 이미지 편집 원본:
 Google Fonts의 Nanum Gothic Regular/Bold 원본 TTF를 글리프 변경 없이 WOFF로 변환해 `src/fonts/`에 포함했습니다. 전체 한글·영문 글리프를 유지하며 외부 폰트 서버에 의존하지 않습니다.
 원본: https://github.com/google/fonts/tree/main/ofl/nanumgothic
 라이선스: SIL Open Font License 1.1, `public/fonts/OFL-NanumGothic.txt`.
+
+## v0.11.4 탐험 모자
+`public/art/worn/explorer-hat-worn.png`: 기존 초록 탐험 모자의 금색 잎 장식과 가죽 밴드를 유지한 새 착용용 원화. 열린 밑면이 없는 정면 모습으로 이미지 생성 도구에서 제작했습니다. 생성 원본은 `/workspace/generated_images/exec-f0c4d5af-ec8d-4565-aa2c-1ae2446e61b3.png`에 보존했습니다. 옷장 썸네일과 실제 착용에 같은 원화를 사용합니다.

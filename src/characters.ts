@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import {friendBands,friendWidthScale,friendPoint} from './character-fit';
 export const friendArt=new URL('../public/art/friends-heads.png',import.meta.url).href;
 const joyArt=new URL('../public/art/princess-atlas.png',import.meta.url).href;
-export const characters=[{id:'joy',name:'조이',hair:'보랏빛 양쪽 번',column:-1,eyeX:0},{id:'luna',name:'루나',hair:'보라색 긴 땋은 머리',column:0,eyeX:268},{id:'ruby',name:'루비',hair:'긴 분홍빛 머리',column:1,eyeX:270},{id:'aria',name:'아리아',hair:'남색 하이 포니테일',column:2,eyeX:269}] as const;
+export const characters=[{id:'joy',name:'조이',hair:'보랏빛 양쪽 번',column:-1,eyeX:0},{id:'luna',name:'루나',hair:'보라색 긴 땋은 머리',column:0,eyeX:271.5},{id:'ruby',name:'루비',hair:'긴 분홍빛 머리',column:1,eyeX:261},{id:'aria',name:'아리아',hair:'남색 하이 포니테일',column:2,eyeX:249}] as const;
 export type CharacterId=typeof characters[number]['id'];
 function canvas(){const c=document.createElement('canvas');c.width=560;c.height=880;const ctx=c.getContext('2d')!;ctx.scale(2,2);return {c,ctx}}
 export class CharacterRig{
