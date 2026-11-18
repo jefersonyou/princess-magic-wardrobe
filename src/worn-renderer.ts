@@ -55,7 +55,7 @@ const cut=boot?.28:.55,top=boot?374:385;ctx.drawImage(source,b[0],b[1]+b[3]*cut,
   const g=garments[id],c=canvas(),ctx=context(c);
   const src=scene.textures.get(g.atlas).getSourceImage() as HTMLImageElement;
   const [sx,sy,sw,sh]=g.frame;
-  const fit=id==='explorerHat'?{x:103,y:24,w:74,h:39}:
+  const fit=id==='explorerHat'?{x:99,y:21,w:82,h:44}:
    id==='finalCrown'?{x:116,y:21,w:49,h:27}:
    id==='crown'?{x:115,y:20,w:51,h:33}:
    id==='tiara'?{x:114,y:22,w:53,h:36}:
@@ -67,6 +67,12 @@ const cut=boot?.28:.55,top=boot?374:385;ctx.drawImage(source,b[0],b[1]+b[3]*cut,
   const cropX=id==='collectionHead0'?.83:id==='collectionHead7'?.76:1;
   const cropY=id==='collectionHead6'?.66:1;
   ctx.drawImage(src,sx,sy,sw*cropX,sh*cropY,fit.x,fit.y,fit.w*cropX,fit.h*cropY);
+  if(id==='explorerHat'){
+   const rear=canvas();rear.getContext('2d')!.drawImage(c,0,0);scene.textures.addCanvas('worn-back-explorerHat',rear);
+   // The open underside goes behind the hair. Only the crown and near brim
+   // pass in front, so the hat surrounds the head instead of covering it.
+   ctx.save();ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.ellipse(fit.x+fit.w*.5,fit.y+fit.h*.745,fit.w*.435,fit.h*.135,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  }
   scene.textures.addCanvas('worn-'+id,c);
  }
  prepareFashion(scene);

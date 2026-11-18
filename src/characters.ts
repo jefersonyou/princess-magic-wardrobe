@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import {friendBands,friendWidthScale,friendPoint} from './character-fit';
 export const friendArt=new URL('../public/art/friends-heads.png',import.meta.url).href;
 const joyArt=new URL('../public/art/princess-atlas.png',import.meta.url).href;
 export const characters=[{id:'joy',name:'조이',hair:'보랏빛 양쪽 번',column:-1,eyeX:0},{id:'luna',name:'루나',hair:'보라색 긴 땋은 머리',column:0,eyeX:268},{id:'ruby',name:'루비',hair:'긴 분홍빛 머리',column:1,eyeX:270},{id:'aria',name:'아리아',hair:'남색 하이 포니테일',column:2,eyeX:269}] as const;
@@ -9,8 +10,8 @@ export class CharacterRig{
  constructor(private scene:Phaser.Scene,onChoose:()=>void){
   try{const saved=localStorage.getItem('joy-character');if(characters.some(c=>c.id===saved))this.id=saved as CharacterId}catch{}
   const source=scene.textures.get('wornFriends').getSourceImage() as HTMLImageElement;
-  for(const character of characters){if(character.column<0)continue;const x=character.column*512,dx=140-character.eyeX*.25,dy=69-326*.18;
-   const full=canvas();full.ctx.drawImage(source,x,0,512,550,dx,dy,128,550*.18);full.ctx.drawImage(source,x,550,512,474,dx,dy+550*.18,128,474*.32);
+  for(const character of characters){if(character.column<0)continue;const x=character.column*512,dx=friendPoint(0,0,character.eyeX)[0];
+   const full=canvas();for(const [start,end,top,scale]of friendBands)full.ctx.drawImage(source,x,start,512,end-start,dx,top,512*friendWidthScale,(end-start)*scale);
    const head=canvas(),back=canvas(),braid=canvas();head.ctx.drawImage(full.c,0,0,280,440);head.ctx.clearRect(0,103,280,337);back.ctx.drawImage(full.c,0,0,280,440);back.ctx.clearRect(0,0,280,103);
    if(character.id==='luna'){braid.ctx.drawImage(back.c,0,0,280,440);braid.ctx.clearRect(126,0,154,440);back.ctx.clearRect(0,103,126,337)}
    scene.textures.addCanvas('friend-head-'+character.id,head.c);scene.textures.addCanvas('friend-back-'+character.id,back.c);scene.textures.addCanvas('friend-braid-'+character.id,braid.c);

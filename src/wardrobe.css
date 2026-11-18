@@ -105,3 +105,5 @@
 
 #scene-backdrop{position:fixed;inset:0;z-index:-1;pointer-events:none;background:#efd7d5 url('../public/art/royal-dressing-room.png') center/cover no-repeat}
 input,select,textarea{font:inherit}.stage{background:none}
+
+#character::before{content:'';position:absolute;left:var(--ground-x,50%);top:var(--ground-y,95%);width:var(--ground-width,60px);height:var(--ground-height,9px);transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(63,39,40,.29),rgba(63,39,40,.12) 40%,transparent 72%);pointer-events:none;z-index:0}#character canvas{z-index:1}

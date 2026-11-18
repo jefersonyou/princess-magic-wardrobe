@@ -1,3 +1,4 @@
+import {earlobes} from './character-fit';
 import {mittenGrip} from './mitten-grip';
 import type Phaser from 'phaser';
 import {fashionFrames as frames} from './fashion';
@@ -68,11 +69,10 @@ export function applyGloveFit(scene:Phaser.Scene,id:string,outfit:string|undefin
 
 // The friends share a body, but their earlobes are at different head landmarks.
 export function earringTexture(scene:Phaser.Scene,id:string,character='joy'){
- const positions:Record<string,readonly[number,number,number]>={joy:[114,166,79.5],luna:[110,174,81],ruby:[111,173,81],aria:[111,173,81]};
  if(character==='joy')return 'worn-'+id;
  const key='ear-fit-'+character+'-'+id;
  if(!scene.textures.exists(key)){
-  const [left,right,y]=positions[character]||positions.joy,source=scene.textures.get('worn-'+id).getSourceImage() as HTMLCanvasElement,{c,ctx}=make();
+  const [left,right,y]=earlobes[character]||earlobes.joy,source=scene.textures.get('worn-'+id).getSourceImage() as HTMLCanvasElement,{c,ctx}=make();
   ctx.drawImage(source,0,0,280,880,left-114,y-79.5,140,440);
   ctx.drawImage(source,280,0,280,880,140+right-166,y-79.5,140,440);
   scene.textures.addCanvas(key,c);
