@@ -1,12 +1,13 @@
 import {explorerHatArt} from '../hat-art';
 import {fashionAtlases,fashionFrames} from '../fashion';
+import {hairStyles,hairStylesAtlas} from '../hair-styles';
 import frames from './collection-frames';
 export type Point=readonly[number,number];
 export type Rect=readonly[number,number,number,number];
 export type Slot='dress'|'shoes'|'head'|'neck'|'wrist'|'outer'|'hands'|'held'|'face'|'hair'|'ears';
-export interface Sprite {atlas:'princess'|'wardrobe'|'clothes'|'accessories'|'adventure'|'hair'|keyof typeof fashionAtlases;frame:Rect;position:Point;size:Point}
+export interface Sprite {atlas:'princess'|'wardrobe'|'clothes'|'accessories'|'adventure'|'hair'|'hairStyles'|keyof typeof fashionAtlases;frame:Rect;position:Point;size:Point}
 export interface Garment extends Sprite {name:string;english:string;designer?:string;slot:Slot;anchor:keyof typeof anchors;rotation:number;layer:number;radius:number}
-export const atlases={...fashionAtlases,hair:{url:new URL('../../public/art/hair-extensions.png',import.meta.url).href,width:1254,height:1254},adventure:{url:new URL('../../public/art/adventure-atlas.png',import.meta.url).href,width:1536,height:1024},clothes:{url:new URL('../../public/art/clothes-collection.png',import.meta.url).href,width:1024,height:1536},accessories:{url:new URL('../../public/art/accessories-collection.png',import.meta.url).href,width:1024,height:1536},princess:{url:new URL('../../public/art/princess-atlas.png',import.meta.url).href,width:1216,height:1293},wardrobe:{url:new URL('../../public/art/wardrobe-atlas.png',import.meta.url).href,width:1086,height:1448}};
+export const atlases={...fashionAtlases,hair:{url:new URL('../../public/art/hair-extensions.png',import.meta.url).href,width:1254,height:1254},hairStyles:hairStylesAtlas,adventure:{url:new URL('../../public/art/adventure-atlas.png',import.meta.url).href,width:1536,height:1024},clothes:{url:new URL('../../public/art/clothes-collection.png',import.meta.url).href,width:1024,height:1536},accessories:{url:new URL('../../public/art/accessories-collection.png',import.meta.url).href,width:1024,height:1536},princess:{url:new URL('../../public/art/princess-atlas.png',import.meta.url).href,width:1216,height:1293},wardrobe:{url:new URL('../../public/art/wardrobe-atlas.png',import.meta.url).href,width:1086,height:1448}};
 export const anchors={ears:[140,83],face:[140,69],head:[140,40],neck:[140,111],leftShoulder:[114,119],rightShoulder:[166,119],chest:[140,140],waist:[140,178],hips:[140,220],leftHand:[52,240],rightHand:[228,240],rightWrist:[220,231],leftFoot:[117,408],rightFoot:[164,408]} as const;
 export const body:Sprite={atlas:'princess',frame:[110,0,405,762],position:[33.4,21],size:[210.6,396.24]};
 function item(name:string,english:string,slot:Slot,atlas:Sprite['atlas'],frame:Rect,position:Point,size:Point,rotation=0):Garment{const anchor=slot==='ears'?'ears':slot==='hair'?'head':slot==='outer'?'waist':slot==='hands'?'leftHand':slot==='held'?'rightHand':slot==='face'?'face':slot==='dress'?'waist':slot==='shoes'?'leftFoot':slot==='head'?'head':slot==='neck'?'neck':'rightWrist';return {name,english,slot,atlas,frame,position,size,rotation,anchor,layer:{dress:30,shoes:40,head:60,neck:55,wrist:56,outer:35,hands:58,held:59,face:62,hair:-10,ears:64}[slot],radius:{dress:60,shoes:42,head:40,neck:29,wrist:28,outer:60,hands:32,held:38,face:30,hair:40,ears:36}[slot]}}
@@ -37,10 +38,9 @@ const headNames=['나비 핀','마린 리본','딸기 리본','발레 티아라'
 for(let i=0;i<8;i++){const tiara=[3,4,5].includes(i);garments['collectionHead'+i]=item(headNames[i],['Butterfly clip','Sailor bow','Berry bow','Ballet tiara','Emerald tiara','Snow tiara','Rose comb','Moon clip'][i],'head','accessories',frames.accessories[i] as unknown as Rect,tiara?[115,24]:[157,49],tiara?[50,32]:[33,24])}
 const jewelNames=['나비','마린','하트','라벤더','에메랄드','눈꽃','장미','달빛'];
 for(let i=0;i<8;i++)garments['collectionNeck'+i]=item(jewelNames[i]+' 목걸이',jewelNames[i]+' necklace','neck','accessories',frames.accessories[8+i] as unknown as Rect,[126,109],[28,20]);
-for(let i=0;i<7;i++)garments['collectionWrist'+i]=item(jewelNames[i]+' 팔찌',jewelNames[i]+' bracelet','wrist','accessories',frames.accessories[16+i] as unknown as Rect,[211,227],[15,6],-32);
+for(let i=0;i<8;i++)garments['collectionWrist'+i]=item(jewelNames[i]+' 팔찌',jewelNames[i]+' bracelet','wrist','accessories',frames.accessories[16+i] as unknown as Rect,[211,227],[15,6],-32);
+for(const h of hairStyles)garments[h.id]=item('조이의 '+h.styleName,h.english,'hair',h.atlas,h.frame,h.position,h.size);
 Object.assign(garments,{
- hairWaves:item('조이의 긴 웨이브','Wavy hair','hair','hair',[99,131,451,767],[86,25],[108,184]),
- hairBraids:item('조이의 리본 땋은 머리','Braided hair','hair','hair',[763,131,345,819],[92,26],[96,210]),
  raincoat:item('햇살 비옷','Raincoat','outer','adventure',[65,46,259,315],[51,106],[178,207]),
  winterCoat:item('눈꽃 겨울 외투','Coat','outer','adventure',[443,27,265,329],[50,103],[180,212]),
  explorer:item('탐험 셔츠와 바지','Pants','dress','adventure',[843,26,214,356],[0,0],[280,440]),
@@ -72,4 +72,5 @@ for(const [id,name,english,slot,frame] of [
 ] as const)garments[id]={...item(name,english,slot,'jian',frame,[0,0],[280,440]),designer:'지안'};
 export type GarmentId=keyof typeof garments;
 export const ids=Object.keys(garments) as GarmentId[];
-export function thumbnail(id:GarmentId){if(id==='explorerHat')return `<svg viewBox="0 0 1942 809"><image href="${explorerHatArt}" width="1942" height="809"/></svg>`;const g=garments[id],a=atlases[g.atlas],[x,y,w,h]=g.frame;return `<svg viewBox="0 0 ${w} ${h}"><defs><clipPath id="crop-${id}"><rect width="${w}" height="${h}"/></clipPath></defs><image clip-path="url(#crop-${id})" href="${a.url}" x="${-x}" y="${-y}" width="${a.width}" height="${a.height}"/></svg>`}
+let clipSeq=0;
+export function thumbnail(id:GarmentId){if(id==='explorerHat')return `<svg viewBox="0 0 1942 809"><image href="${explorerHatArt}" width="1942" height="809"/></svg>`;const g=garments[id],a=atlases[g.atlas],[x,y,w,h]=g.frame,cid=`crop-${id}-${++clipSeq}`;return `<svg viewBox="0 0 ${w} ${h}"><defs><clipPath id="${cid}"><rect width="${w}" height="${h}"/></clipPath></defs><image clip-path="url(#${cid})" href="${a.url}" x="${-x}" y="${-y}" width="${a.width}" height="${a.height}"/></svg>`}

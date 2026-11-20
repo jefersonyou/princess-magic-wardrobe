@@ -12,14 +12,17 @@ export function braceletLandmark(source:HTMLCanvasElement){
  return {x:cx+midU*cos-midV*sin,y:cy+midU*sin+midV*cos,angle,width:u[hi]-u[lo]};
 }
 const cache=new WeakMap<Phaser.Scene,string[]>();
-export function prepareBraceletFit(scene:Phaser.Scene,id:string,outfit:string|undefined,held:boolean){
- const key='fitted-'+id+'-'+(outfit||'base')+(held?'-raised':'');
+export function prepareBraceletFit(scene:Phaser.Scene,id:string,outfit:string|undefined,held:boolean,gloveMode:'none'|'fashion'|'mitten'='none'){
+ const key='fitted-'+id+'-'+(outfit||'base')+(held?'-raised':'')+(gloveMode==='none'?'':'-'+gloveMode);
  if(!scene.textures.exists(key)){
-  const wrist=poseWrists(scene,outfit,held)[1],source=scene.textures.get('bracelet-art-'+id).getSourceImage() as HTMLCanvasElement,landmark=braceletLandmark(source),width=Math.max(10,Math.min(16,wrist.width+3)),scale=width/landmark.width;
-  const canvas=document.createElement('canvas');canvas.width=560;canvas.height=880;const ctx=canvas.getContext('2d')!;ctx.scale(2,2);ctx.translate(wrist.x-wrist.dx*3,wrist.y-wrist.dy*3);ctx.rotate(Math.atan2(-wrist.dx,wrist.dy)-landmark.angle);ctx.scale(scale,scale);ctx.drawImage(source,-landmark.x,-landmark.y);scene.textures.addCanvas(key,canvas);
-  let keys=cache.get(scene);if(!keys){keys=[];cache.set(scene,keys)}keys.push(key);if(keys.length>24)scene.textures.remove(keys.shift()!);
+  const wrist=poseWrists(scene,outfit,held)[1],source=scene.textures.get('bracelet-art-'+id).getSourceImage() as HTMLCanvasElement,landmark=braceletLandmark(source);
+  const extraWidth=gloveMode==='mitten'?4.5:gloveMode==='fashion'?3.8:3;
+  const shift=gloveMode==='mitten'?6.5:gloveMode==='fashion'?5:3;
+  const width=Math.max(10,Math.min(18,wrist.width+extraWidth)),scale=width/landmark.width;
+  const canvas=document.createElement('canvas');canvas.width=560;canvas.height=880;const ctx=canvas.getContext('2d')!;ctx.scale(2,2);ctx.translate(wrist.x-wrist.dx*shift,wrist.y-wrist.dy*shift);ctx.rotate(Math.atan2(-wrist.dx,wrist.dy)-landmark.angle);ctx.scale(scale,scale);ctx.drawImage(source,-landmark.x,-landmark.y);scene.textures.addCanvas(key,canvas);
+  let keys=cache.get(scene);if(!keys){keys=[];cache.set(scene,keys)}keys.push(key);if(keys.length>32)scene.textures.remove(keys.shift()!);
  }
  return key;
 }
 
-export function applyBraceletFit(scene:Phaser.Scene,id:string,outfit:string|undefined,held:boolean,layers:Map<string,Phaser.GameObjects.Image>){layers.get(id)!.setTexture(prepareBraceletFit(scene,id,outfit,held)).setPosition(0,0).setDisplaySize(280,440).setAngle(0).setDepth(66)}
+export function applyBraceletFit(scene:Phaser.Scene,id:string,outfit:string|undefined,held:boolean,layers:Map<string,Phaser.GameObjects.Image>,gloveMode:'none'|'fashion'|'mitten'='none'){layers.get(id)!.setTexture(prepareBraceletFit(scene,id,outfit,held,gloveMode)).setPosition(0,0).setDisplaySize(280,440).setAngle(0).setDepth(gloveMode==='mitten'?64:66)}

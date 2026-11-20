@@ -9,8 +9,10 @@ export function useGroundedBackground(url:string){if(source?.src===url){refreshG
 export function refreshGround(){cancelAnimationFrame(pending);pending=requestAnimationFrame(()=>{
  if(!source?.complete||!source.naturalWidth)return;
  const model=document.querySelector<HTMLCanvasElement>('#character canvas'),stage=document.querySelector<HTMLElement>('.stage'),background=document.querySelector<HTMLElement>('#scene-backdrop');if(!model||!stage||!background)return;
- const r=model.getBoundingClientRect(),s=stage.getBoundingClientRect();if(!r.width||!r.height)return;
- const footX=r.left+bodyCenterX*r.width/280,footY=r.top+Number(model.parentElement?.dataset.footY||visualY(418))*r.height/440;
+ const r=model.getBoundingClientRect(),s=stage.getBoundingClientRect(),hRect=model.parentElement?.getBoundingClientRect();if(!r.width||!r.height)return;
+ const baseX=Number(model.parentElement?.dataset.baseFootX),baseY=Number(model.parentElement?.dataset.baseFootY);
+ const footX=hRect&&Number.isFinite(baseX)?hRect.left+baseX:r.left+bodyCenterX*r.width/280;
+ const footY=hRect&&Number.isFinite(baseY)?hRect.top+baseY:r.top+Number(model.parentElement?.dataset.footY||visualY(418))*r.height/440;
  const camera=groundCamera(source.naturalWidth,source.naturalHeight,s.width,footX,footY),density=Math.min(devicePixelRatio,2),w=innerWidth,h=innerHeight;
  const c=document.createElement('canvas');c.width=Math.round(w*density);c.height=Math.round(h*density);const ctx=c.getContext('2d')!;ctx.scale(density,density);ctx.fillStyle='#efd7d5';ctx.fillRect(0,0,w,h);
  // Continue the floor texture and outer edges behind the controls and wardrobe.

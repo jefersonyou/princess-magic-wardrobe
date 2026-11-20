@@ -4,7 +4,7 @@ import {visualY} from '../src/proportions';
 test('all eight bracelets follow the wrist in relaxed, raised and coat poses',async({page})=>{
  test.setTimeout(240000);await page.addInitScript(all=>localStorage.setItem('joy-story-v2',JSON.stringify({stage:5,step:3,complete:true,cleared:[0,1,2,3,4,5],learned:[],unlocked:all,partial:[]})),ids);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await expect(page.locator('#character')).toHaveAttribute('data-ready','true');
  async function wear(id:string){const b=page.locator(`[data-item="${id}"]`);await b.scrollIntoViewIfNeeded();const r=(await b.boundingBox())!,c=(await page.locator('canvas').boundingBox())!,[x,y]=anchors[garments[id].anchor];await page.mouse.move(r.x+r.width/2,r.y+r.height/2);await page.mouse.down();const target=(await page.locator('#character').getAttribute('data-drop-anchor'))!.split(',').map(Number);await page.mouse.move(c.x+target[0]*c.width/280,c.y+target[1]*c.height/440,{steps:3});await page.mouse.up();await expect(page.locator('#character')).toHaveAttribute('data-worn',new RegExp(`(^|,)${id}(,|$)`));await page.waitForTimeout(1100)}
- const bracelets=ids.filter(id=>garments[id].slot==='wrist');expect(bracelets).toHaveLength(8);
+ const bracelets=ids.filter(id=>garments[id].slot==='wrist');expect(bracelets).toHaveLength(9);
  for(const pose of ['relaxed','raised','coat']){
   await page.locator('#reset').click();await wear(pose==='coat'?'raincoat':'rose');if(pose!=='relaxed'){await wear('umbrella');await wear('fashionGloves4')}
   for(const id of bracelets){
